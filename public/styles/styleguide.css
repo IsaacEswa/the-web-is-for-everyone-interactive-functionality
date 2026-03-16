@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "Arial BC";
+    src: url('../fonts/BuurtCampusArial-Bold.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+:root {
+    --primary-color: #FD4D00;
+    --secondary-color: #34356A;
+    --nieuw-west: #89A43B;
+    --oost: #34356A;
+    --zuidoost: #005D66;
+
+    --dark-text: #1E1E1E;
+    --light-text: #F1F1F1;
+
+    --light-background: #F1F1F1;
+
+    --paddingsidesMobile: 0 15px;
+
+}
+
+body {
+    line-height: 1.5;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    /* 16 → 18 */
+}
+
+main {
+    padding: var(--paddingsidesMobile);
+}
+
+article,
+article img {
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: clamp(1.75rem, 3vw, 2rem);
+    /* 28 → 32 */
+    color: var(--dark-text)
+}
+
+h3 {
+    font-size: clamp(1.375rem, 3vw, 1.75rem);
+    /* 22 → 28 */
+}
+
+span,
+time {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    /* 16 → 18 */
+    font-weight: bold;
+}
+
+/* DOELGROEP FILTER */
+.targetgroup-filter-container {
+
+    select {
+        appearance: none;
+        /* verwijdert browser styling */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        padding: 5px 10px;
+        border-radius: 10px;
+        /* font-size: 1rem; */
+        background-color: var(--nieuw-west);
+        cursor: pointer;
+        color: white;
+    }
+}
+
+.single-article-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,374 @@
+/* ---------- HEADER STYLING ---------- */
+header {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 15px;
+    align-items: center;
+    position: relative;
+
+    .header-logo {
+        display: flex;
+        line-height: 0;
+
+        img {
+            width: 75%;
+
+        }
+    }
+
+    /* @media (min-width: 768px) {
+        padding: 20px 50px;
+    } */
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--primary-color);
+    width: 95%;
+    margin: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background: white;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 15px;
+    padding-top: 25px;
+
+    li,
+    a {
+        width: 100%;
+        list-style: none;
+        text-decoration: none;
+        color: black;
+        margin-bottom: 0.5em;
+    }
+
+}
+
+.sidebar.open {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7em;
+    align-items: center;
+
+    .nav-search {
+        input {
+            padding: 10px;
+        }
+    }
+
+    .navigation {
+        display: none;
+
+        a {
+            font-weight: 600;
+        }
+
+
+        /* @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        justify-content: space-between;
+        list-style: none;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+    } */
+    }
+
+    #close-icon {
+        text-align: right;
+        /* padding-right: 15px; */
+        margin-top: -10px;
+        display: flex;
+        align-self: end;
+    }
+
+    #close-icon,
+    #hamburger-icon {
+        cursor: pointer;
+        line-height: 0;
+        background: none;
+        border: none;
+
+        svg {
+            fill: var(--secondary-color);
+        }
+    }
+
+}
+
+/* ---------- MAIN SECTION STYLING ---------- */
+
+.main-content {
+    margin-top: 3em;
+}
+
+.featured-article {
+    background-image: url("../assets/nieuw-west/dragers_in_damsko.png.webp");
+    height: 25em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    padding: 2em;
+
+    /* Voor de overlay */
+    position: relative;
+    overflow: hidden;
+
+    .featured-article-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+
+    .featured-article-information {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+
+
+
+        .featured-article-date {
+            display: flex;
+            align-items: center;
+            gap: .5em;
+        }
+
+        /* oranje label */
+        span {
+            background: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+    }
+
+
+
+    * {
+        color: white;
+        fill: white;
+    }
+}
+
+.featured-article::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top,
+            hsl(0 0% 0% / .9),
+            hsl(0 0% 0% / .4));
+}
+
+/* ----- DISTRICT ARTICLES STYLING ----- */
+.home-articles {
+    margin-top: 5em;
+
+    /* .single-article {
+
+        .article-title {
+            margin-bottom: 100px;
+        }
+
+    } */
+}
+
+.district-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    .article-cover {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .article-card-content {
+        padding: 1em 1.5em;
+        gap: 0.7em;
+        display: flex;
+        flex-direction: column;
+
+        .article-intro {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* number of lines to show */
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+.district-articles.algemeen .single-article {
+    background-color: var(--light-background);
+
+    time {
+        color: var(--primary-color);
+    }
+
+    h3 {
+        color: var(--secondary-color);
+        /* width: 90%; */
+    }
+}
+
+.district-articles.nieuw-west .single-article {
+    background-color: var(--nieuw-west);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: white;
+        /* width: 90%; */
+    }
+}
+
+.home-district-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+
+    a {
+        color: var(--dark-text);
+        text-decoration: none;
+    }
+}
+
+/* ----- DISTRICT PAGE STYLING ----- */
+.district-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+
+}
+
+.single-article {
+    height: 100%;
+    padding: .5em;
+    /* position: relative; */
+
+    gap: 0.5em;
+    display: flex;
+    flex-direction: column;
+
+    .article-cover {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .article-cover.fallback {
+        object-fit: contain;
+        background: white;
+    }
+}
+
+.single-article.algemeen {
+    background-color: var(--light-background);
+
+    time {
+        color: var(--primary-color);
+    }
+
+    h3 {
+        color: var(--secondary-color);
+    }
+
+    p {
+        color: var(--dark-text);
+    }
+}
+
+.single-article.nieuw-west {
+    background-color: var(--nieuw-west);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: white;
+    }
+
+    p {
+        color: var(--light-text);
+    }
+}
+
+.single-article.zuidoost {
+    background-color: var(--zuidoost);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: white;
+    }
+
+    p {
+        color: var(--light-text);
+    }
+}
+
+.single-article.oost {
+    background-color: var(--oost);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: var(--primary-color);
+    }
+
+    p {
+        color: var(--light-text);
+    }
+}
+
+/* ----- SEARCH PAGE STYLING ----- */
+.search-result {
+    text-align: center;
+}
