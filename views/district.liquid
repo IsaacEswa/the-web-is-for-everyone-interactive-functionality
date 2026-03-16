@@ -3,8 +3,8 @@
 
 <main>
 
-    {% assign valid_districts = "oost,zuidoost,nieuw-west,algemeen" | split: "," %}
-    {% if valid_districts contains district %}
+    {% assign districts = "algemeen,nieuw-west,zuidoost,oost" | split: "," %}
+    {% if districts contains district %}
 
     <section class="district-hero">
         <h2>{{ district | capitalize }}</h2>

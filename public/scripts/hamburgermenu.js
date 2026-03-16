@@ -1,49 +1,45 @@
-// ----- SIDEBAR FOCUS TRAP -----
-const sidebar = document.getElementById('sidebar');
-const closeBtn = document.getElementById('close-icon');
+const sidebar = document.getElementById("sidebar");
+const openBtn = document.getElementById("hamburger-icon");
+const closeBtn = document.getElementById("close-icon");
+
+const focusableSelectors = 'a, button, [tabindex]:not([tabindex="-1"])';
+
+openBtn.addEventListener("click", showSidebar);
+closeBtn.addEventListener("click", hideSidebar);
 
 function showSidebar() {
-    sidebar.classList.add('open');
+    sidebar.classList.add("open");
     sidebar.setAttribute("aria-hidden", "false");
 
-    // pak alle focusbare elementen in de sidebar
-    const focusable = sidebar.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
-    const firstFocusableElement = focusable[0];
-    const lastFocusableElement = focusable[focusable.length - 1];
+    const focusable = sidebar.querySelectorAll(focusableSelectors);
+    const firstFocusable = focusable[0];
+    const lastFocusable = focusable[focusable.length - 1];
 
-    // Focus gaat naar de close button
-    firstFocusableElement.focus();
+    firstFocusable.focus();
 
-    // Trap focus inside sidebar
-    sidebar.addEventListener("keydown", function (e) {
+    sidebar.onkeydown = function (e) {
+
         if (e.key === "Tab") {
-            if (e.shiftKey) {
-                // Shift+Tab van eerste element → ga naar laatste
-                if (document.activeElement === firstFocusableElement) {
-                    e.preventDefault();
-                    lastFocusableElement.focus();
-                }
-            } else {
-                // Tab van laatste element → ga naar eerste
-                if (document.activeElement === lastFocusableElement) {
-                    e.preventDefault();
-                    firstFocusableElement.focus();
-                }
+            if (e.shiftKey && document.activeElement === firstFocusable) {
+                e.preventDefault();
+                lastFocusable.focus();
+            }
+
+            if (!e.shiftKey && document.activeElement === lastFocusable) {
+                e.preventDefault();
+                firstFocusable.focus();
             }
         }
 
-        // Escape sluit menu
         if (e.key === "Escape") {
             hideSidebar();
         }
-    });
+    };
 }
 
 function hideSidebar() {
-    sidebar.classList.remove('open');
+    sidebar.classList.remove("open");
     sidebar.setAttribute("aria-hidden", "true");
-    closeBtn.blur();
+
+    openBtn.focus(); // focus terug naar hamburger
 }
-
-
-console.log('hamburger menu script loaded');
