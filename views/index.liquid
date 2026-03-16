@@ -24,40 +24,47 @@
             </article>
         </a>
 
-        {% comment %} Algemeen {% endcomment %}
+        {% assign district = "algemeen,nieuw-west,zuidoost,oost" | split: "," %}
+
+        {% for district in district %}
         <section class="home-articles">
+
             <div class="home-district-top">
-                <h2>Algemeen</h2>
-                <a href="/algemeen">Alles bekijken →</a>
+                <h2>{{ district | capitalize }}</h2>
+                <a href="/{{ district }}">Alles bekijken →</a>
             </div>
-            <div class="district-articles algemeen">
-                {% assign counter = 0 %}
-                {% for story in stories %}
-                {% if story.district == "algemeen" %}
-                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
-                    <article class="single-article algemeen">
+
+            <div class="district-articles {{ district }}">
+
+                {% assign district_stories = stories | where: "district", district %}
+
+                {% for story in district_stories limit:3 %}
+                <a href="/{{ story.district }}/test" class="single-article-link">
+                    <article class="single-article {{ district }}">
+
                         {% if story.cover %}
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
                         {% else %}
-                        <img class="article-cover fallback" src="/assets/Compact_Blurple.png"
+                        <img class="article-cover fallback" src="/assets/Compact_Blurple_{{ district }}.png"
                             alt="Geen afbeelding beschikbaar">
                         {% endif %}
+
                         <div class="article-card-content">
                             <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
                         </div>
+
                     </article>
-                    </a>
+                </a>
+                {% endfor %}
 
-                    {% assign counter = counter | plus: 1 %}
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
             </div>
-        </section>
 
-        {% comment %} Nieuw-West {% endcomment %}
+        </section>
+        {% endfor %}
+
+        {% comment %} Nieuw-West
         <section class="home-articles">
             <div class="home-district-top">
                 <h2>Nieuw-West</h2>
@@ -88,9 +95,9 @@
                     {% endif %}
                     {% endfor %}
             </div>
-        </section>
+        </section> {% endcomment %}
 
-        {% comment %} Zuidoost {% endcomment %}
+        {% comment %} Zuidoost
         <section class="home-articles">
             <div class="home-district-top">
                 <h2>Zuidoost</h2>
@@ -121,9 +128,9 @@
                     {% endif %}
                     {% endfor %}
             </div>
-        </section>
+        </section> {% endcomment %}
 
-        {% comment %} Oost {% endcomment %}
+        {% comment %} Oost
         <section class="home-articles">
             <div class="home-district-top">
                 <h2>Oost</h2>
@@ -154,7 +161,7 @@
                     {% endif %}
                     {% endfor %}
             </div>
-        </section>
+        </section> {% endcomment %}
 
     </section>
 

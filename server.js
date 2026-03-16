@@ -26,6 +26,8 @@ app.set('views', './views')
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
 
+  const district = request.params.district
+
   const params = {
     // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
     'sort': '-date',
@@ -43,7 +45,7 @@ app.get('/', async function (request, response) {
   // console.log(apiStoriesResponseJSON);
   // console.log(params);
 
-  response.render('index.liquid', { stories: apiStoriesResponseJSON.data })
+  response.render('index.liquid', { stories: apiStoriesResponseJSON.data, district: district })
 })
 
 app.get('/:district', async function (request, response) {
