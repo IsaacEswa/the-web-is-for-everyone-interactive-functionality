@@ -27,6 +27,8 @@ app.set('views', './views')
 app.get('/', async function (request, response) {
 
   const district = request.params.district
+  const slug = request.params.slug
+
 
   const params = {
     // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
@@ -36,7 +38,7 @@ app.get('/', async function (request, response) {
     //  'filter[district]': 'algemeen, nieuw-west, zuidoost, oost',
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status, district',
+    'fields': 'cover, date, title, intro, status, district, slug',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -45,12 +47,15 @@ app.get('/', async function (request, response) {
   // console.log(apiStoriesResponseJSON);
   // console.log(params);
 
-  response.render('index.liquid', { stories: apiStoriesResponseJSON.data, district: district })
+  response.render('index.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
 
 app.get('/:district', async function (request, response) {
 
   const district = request.params.district
+  const slug = request.params.slug
+
+
 
   const params = {
     // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
@@ -60,7 +65,7 @@ app.get('/:district', async function (request, response) {
     'filter[district]': district,
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status, district',
+    'fields': 'cover, date, title, intro, status, district, slug',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -69,7 +74,33 @@ app.get('/:district', async function (request, response) {
   // console.log(apiStoriesResponseJSON);
   // console.log(params);
 
-  response.render('district.liquid', { stories: apiStoriesResponseJSON.data, district: district })
+  response.render('district.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
+})
+
+app.get('/:district/:slug', async function (request, response) {
+
+  const district = request.params.district
+  const slug = request.params.slug
+
+
+  const params = {
+    // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
+    'sort': '-date',
+
+    'filter[district]': district,
+    'filter[slug]': slug,
+
+    // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
+    'fields': 'cover, date, title, intro, status, district, slug',
+  }
+
+  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  const apiStoriesResponseJSON = await apiStoriesResponse.json()
+
+  // console.log(apiStoriesResponseJSON);
+  // console.log(params);
+
+  response.render('details.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
 
 

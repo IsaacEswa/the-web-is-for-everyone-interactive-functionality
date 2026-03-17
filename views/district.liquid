@@ -15,17 +15,9 @@
     <h2>404</h2>
     {% endif %}
 
-    {% comment %} {% if district == 'oost' %}
-    {% elsif district == 'zuidoost' %}
-    {% elsif district == 'nieuw-west' %}
-    {% elsif district == 'algemeen' %}
-    {% else %}
-    <p>hier komt 404 </p>
-    {% endif %} {% endcomment %}
-
     <section class="district-articles">
         {% for story in stories %}
-        <a href="/{{ story.district }}/test" class="single-article-link">
+        <a href="/{{ story.district }}/{{ story.slug }}" class="single-article-link">
             <article class="single-article {{ story.district}}">
                 {% if story.cover %}
                 <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
@@ -41,7 +33,6 @@
         </a>
         {% endfor %}
     </section>
-
 
 </main>
 
