@@ -91,7 +91,7 @@ app.get('/:district/:slug', async function (request, response) {
     'filter[slug]': slug,
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status, district, slug',
+    'fields': 'cover, date, title, intro, status, district, slug, body',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
@@ -114,7 +114,7 @@ app.post('/', async function (request, response) {
 })
 
 app.use((req, res, next) => {
-  res.status(404).send("mi bomboclat, deze pagina bestaat niet")
+  res.status(404).send("Deze pagina bestaat niet")
 })
 
 // Stel het poortnummer in waar Express op moet gaan luisteren
