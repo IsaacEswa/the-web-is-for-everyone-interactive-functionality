@@ -88,7 +88,6 @@ app.get('/:district/:slug', async function (request, response) {
     'sort': '-date',
 
     'filter[district]': district,
-    'filter[slug]': slug,
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
     'fields': 'cover, date, title, intro, status, district, slug, body',

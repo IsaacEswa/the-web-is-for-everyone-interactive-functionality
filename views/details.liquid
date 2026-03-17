@@ -5,7 +5,7 @@
 
     <section class="details-container">
 
-        <a href="/{{ district }}">← Terug naar overzicht</a>
+        <a class="back-link" href="/{{ district }}">← Terug naar overzicht</a>
 
         {% assign story = stories[0] %}
 
@@ -51,14 +51,14 @@
     </section>
 
     <section class="featured-articles">
-        <h2>Meer bekijken uit {{ district }}</h2>
+        <h2>Meer bekijken uit {{ district }}?</h2>
 
         <div class="featured-articles-container">
 
             <div class="district-articles {{ district }}">
                 {% assign district_stories = stories | where: "district", district %}
 
-                {% for story in district_stories limit:3 %}
+                {% for story in district_stories limit:4 %}
 
                 <a href="/{{ story.district }}/{{ story.slug }}" class="single-article-link">
                     <article class="single-article {{ district }}">
@@ -85,4 +85,4 @@
 
 </main>
 
-{% comment %} {% render 'partials/foot.liquid' %} {% endcomment %}
+{% render 'partials/foot.liquid' %}
