@@ -35,13 +35,12 @@
             </div>
 
             <div class="district-articles {{ district }}">
-
                 {% assign district_stories = stories | where: "district", district %}
 
                 {% for story in district_stories limit:3 %}
+
                 <a href="/{{ story.district }}/test" class="single-article-link">
                     <article class="single-article {{ district }}">
-
                         {% if story.cover %}
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
@@ -54,165 +53,19 @@
                             <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
                         </div>
-
                     </article>
                 </a>
+
                 {% endfor %}
-
             </div>
-
         </section>
         {% endfor %}
 
-        {% comment %} Nieuw-West
-        <section class="home-articles">
-            <div class="home-district-top">
-                <h2>Nieuw-West</h2>
-                <a href="/nieuw-west">Alles bekijken →</a>
-            </div>
-            <div class="district-articles nieuw-west">
-                {% assign counter = 0 %}
-                {% for story in stories %}
-                {% if story.district == "nieuw-west" %}
-                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
-                    <article class="single-article nieuw-west">
-                        {% if story.cover %}
-                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
-                            alt="">
-                        {% else %}
-                        <img class="article-cover fallback" src="/assets/Compact_Blurple_NW.png"
-                            alt="Geen afbeelding beschikbaar">
-                        {% endif %}
-                        <div class="article-card-content">
-                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
-                            <h3 class="article-title">{{ story.title }}</h3>
-                        </div>
-                    </article>
-                    </a>
-
-                    {% assign counter = counter | plus: 1 %}
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-            </div>
-        </section> {% endcomment %}
-
-        {% comment %} Zuidoost
-        <section class="home-articles">
-            <div class="home-district-top">
-                <h2>Zuidoost</h2>
-                <a href="/zuidoost">Alles bekijken →</a>
-            </div>
-            <div class="district-articles zuidoost">
-                {% assign counter = 0 %}
-                {% for story in stories %}
-                {% if story.district == "zuidoost" %}
-                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
-                    <article class="single-article zuidoost">
-                        {% if story.cover %}
-                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
-                            alt="">
-                        {% else %}
-                        <img class="article-cover fallback" src="/assets/Compact_ZO.png"
-                            alt="Geen afbeelding beschikbaar">
-                        {% endif %}
-                        <div class="article-card-content">
-                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
-                            <h3 class="article-title">{{ story.title }}</h3>
-                        </div>
-                    </article>
-                    </a>
-
-                    {% assign counter = counter | plus: 1 %}
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-            </div>
-        </section> {% endcomment %}
-
-        {% comment %} Oost
-        <section class="home-articles">
-            <div class="home-district-top">
-                <h2>Oost</h2>
-                <a href="/oost">Alles bekijken →</a>
-            </div>
-            <div class="district-articles oost">
-                {% assign counter = 0 %}
-                {% for story in stories %}
-                {% if story.district == "oost" %}
-                {% if counter < 3 %} <a href="/{{ story.district }}/test" class="single-article-link">
-                    <article class="single-article oost">
-                        {% if story.cover %}
-                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
-                            alt="">
-                        {% else %}
-                        <img class="article-cover fallback" src="/assets/Compact_Oost.png"
-                            alt="Geen afbeelding beschikbaar">
-                        {% endif %}
-                        <div class="article-card-content">
-                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
-                            <h3 class="article-title">{{ story.title }}</h3>
-                        </div>
-                    </article>
-                    </a>
-
-                    {% assign counter = counter | plus: 1 %}
-                    {% endif %}
-                    {% endif %}
-                    {% endfor %}
-            </div>
-        </section> {% endcomment %}
-
     </section>
 
-    <aside class="sticky-sidebar">
-        <section class="recent-articles">
-            <h2>Recent artikelen</h2>
-            <div class="sidebar-articles">
-                <article>
-                    <img src="/assets/nieuw-west/bewegen-verbindt.png.webp" alt="">
-                    <div>
-                        <time datetime="">28-11-2025</time>
-                        <svg width="8" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z" />
-                        </svg>
-                        <span>Algemeen</span>
-                    </div>
-                    <h3>De Buurtcampus in drie vragen: een korte gids</h3>
-                </article>
-
-                <article>
-                    <img src="/assets/nieuw-west/bewegen-verbindt.png.webp" alt="">
-                    <div>
-                        <time datetime="">28-11-2025</time>
-                        <svg width="8" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z" />
-                        </svg>
-                        <span>Algemeen</span>
-                    </div>
-                    <h3>De Buurtcampus in drie vragen: een korte gids</h3>
-                </article>
-
-                <article>
-                    <img src="/assets/nieuw-west/bewegen-verbindt.png.webp" alt="">
-                    <div>
-                        <time datetime="">28-11-2025</time>
-                        <svg width="8" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"><!--!Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
-                            <path d="M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0z" />
-                        </svg>
-                        <span>Algemeen</span>
-                    </div>
-                    <h3>De Buurtcampus in drie vragen: een korte gids</h3>
-                </article>
-
-
-
-            </div>
-        </section>
-    </aside>
+    {% comment %} <aside class="sticky-sidebar">
+        {% render 'partials/recent-articles.liquid' %}
+    </aside> {% endcomment %}
 
 </main>
 
