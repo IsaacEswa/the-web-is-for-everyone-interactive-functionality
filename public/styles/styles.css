@@ -39,7 +39,7 @@ header::after {
     top: 0;
     right: 0;
     height: 100vh;
-    width: 250px;
+    width: 75%;
     z-index: 999;
     background: white;
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
@@ -71,6 +71,7 @@ header::after {
 
         h3 {
             font-weight: normal;
+            color: var(--secondary-color);
 
             overflow: hidden;
             display: -webkit-box;
@@ -81,6 +82,24 @@ header::after {
 
         }
     }
+
+    .archive {
+        width: 100%;
+
+        .single-archive {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            h3 {
+                font-weight: normal;
+            }
+        }
+
+    }
+
 
 }
 
@@ -127,7 +146,7 @@ header::after {
     #close-icon {
         text-align: right;
         /* padding-right: 15px; */
-        margin-top: -10px;
+        margin-top: 2px;
         display: flex;
         align-self: end;
     }
