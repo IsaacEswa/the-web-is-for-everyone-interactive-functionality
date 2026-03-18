@@ -34,6 +34,8 @@ body {
 
 main {
     padding: var(--paddingsidesMobile);
+    margin-top: 3em;
+
 }
 
 article,
