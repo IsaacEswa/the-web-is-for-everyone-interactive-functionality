@@ -1,113 +1,48 @@
 {% render 'partials/head.liquid' %}
 
 <main>
-
     <section class="main-content">
 
         <h2 class="search-result">Zoekresultaten voor "{{ search }}"</h2>
 
-        {% comment %} Algemeen {% endcomment %}
-        {% assign algemeen_stories = stories | where: "district", "algemeen" %}
-        {% if algemeen_stories.size > 0 %}
-        <section class="home-articles">
-            <div class="home-district-top">
-                <h2>Algemeen</h2>
-                <a href="/algemeen">Alles bekijken →</a>
-            </div>
-            <div class="district-articles algemeen">
-                {% for story in algemeen_stories %}
-                <a href="/{{ story.district }}/{{ story.id }}" class="single-article-link">
-                    <article class="single-article algemeen">
-                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
-                            alt="">
-                        <div class="article-card-content">
-                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
-                            <h3 class="article-title">{{ story.title }}</h3>
-                        </div>
-                    </article>
-                </a>
-                {% endfor %}
-            </div>
-        </section>
-        {% endif %}
+        {% assign districts = "algemeen,nieuw-west,zuidoost,oost" | split: "," %}
 
-        {% comment %} Nieuw-West {% endcomment %}
-        {% assign nieuwwest_stories = stories | where: "district", "nieuw-west" %}
-        {% if nieuwwest_stories.size > 0 %}
-        <section class="home-articles">
-            <div class="home-district-top">
-                <h2>Nieuw-West</h2>
-                <a href="/nieuw-west">Alles bekijken →</a>
-            </div>
-            <div class="district-articles nieuw-west">
-                {% for story in nieuwwest_stories %}
-                <a href="/{{ story.district }}/{{ story.id }}" class="single-article-link">
-                    <article class="single-article nieuw-west">
-                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
-                            alt="">
-                        <div class="article-card-content">
-                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
-                            <h3 class="article-title">{{ story.title }}</h3>
-                        </div>
-                    </article>
-                </a>
-                {% endfor %}
-            </div>
-        </section>
-        {% endif %}
+        {% for district in districts %}
+        {% assign district_stories = stories | where: "district", district %}
 
-        {% comment %} Zuidoost {% endcomment %}
-        {% assign zuidoost_stories = stories | where: "district", "zuidoost" %}
-        {% if zuidoost_stories.size > 0 %}
+        {% if district_stories.size > 0 %}
         <section class="home-articles">
-            <div class="home-district-top">
-                <h2>Zuidoost</h2>
-                <a href="/zuidoost">Alles bekijken →</a>
-            </div>
-            <div class="district-articles zuidoost">
-                {% for story in zuidoost_stories %}
-                <a href="/{{ story.district }}/{{ story.id }}" class="single-article-link">
-                    <article class="single-article zuidoost">
-                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
-                            alt="">
-                        <div class="article-card-content">
-                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
-                            <h3 class="article-title">{{ story.title }}</h3>
-                        </div>
-                    </article>
-                </a>
-                {% endfor %}
-            </div>
-        </section>
-        {% endif %}
 
-        {% comment %} Oost {% endcomment %}
-        {% assign oost_stories = stories | where: "district", "oost" %}
-        {% if oost_stories.size > 0 %}
-        <section class="home-articles">
             <div class="home-district-top">
-                <h2>Oost</h2>
-                <a href="/oost">Alles bekijken →</a>
+                <h2>{{ district | capitalize }}</h2>
+                <a href="/{{ district }}">Alles bekijken →</a>
             </div>
-            <div class="district-articles oost">
-                {% for story in oost_stories %}
-                <a href="/{{ story.district }}/{{ story.id }}" class="single-article-link">
-                    <article class="single-article oost">
+
+            <div class="district-articles {{ district }}">
+                {% for story in district_stories %}
+                <a href="/{{ story.district }}/{{ story.slug }}" class="single-article-link">
+
+                    <article class="single-article {{ district }}">
                         <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
                             alt="">
+
                         <div class="article-card-content">
-                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
+                            <time class="article-date">
+                                {{ story.date | date: "%d-%m-%Y" }}
+                            </time>
                             <h3 class="article-title">{{ story.title }}</h3>
                         </div>
                     </article>
+
                 </a>
                 {% endfor %}
             </div>
+
         </section>
         {% endif %}
+        {% endfor %}
 
     </section>
-
 </main>
 
 {% render 'partials/foot.liquid' %}
