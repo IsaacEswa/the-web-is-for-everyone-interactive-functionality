@@ -99,6 +99,7 @@ app.get('/:district/:slug', async function (request, response) {
 
   const district = request.params.district
   const slug = request.params.slug
+  const story = request.params.story
 
 
   const params = {
@@ -106,6 +107,7 @@ app.get('/:district/:slug', async function (request, response) {
     'sort': '-date',
 
     'filter[district]': district,
+    'filter[story]': story,
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
     'fields': 'cover, date, title, intro, status, district, slug, body',
@@ -114,19 +116,11 @@ app.get('/:district/:slug', async function (request, response) {
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
-  // 1. Haal  artikel op
-  const storyResponse = await fetch(`https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?filter[slug][_eq]=${request.params.slug}`);
-  const storyResponseJSON = await storyResponse.json();
-  const singleStory = storyResponseJSON.data[0];
-  // 2. Haal comments op
-  const commentsResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories_comments');
-  const commentsResponseJSON = await commentsResponse.json();
+  const apiCommentsResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories_comments?' + new URLSearchParams(params))
+  const apiCommentsResponseJSON = await apiCommentsResponse.json()
 
-  response.render('details.liquid', {
-    stories: apiStoriesResponseJSON.data, district: district, slug: slug, singleStory: singleStory,
-    district: request.params.district,
-    comments: commentsResponseJSON.data,
-  })
+
+  response.render('details.liquid', { stories: apiStoriesResponseJSON.data, comments: apiCommentsResponseJSON.data, district: district, slug: slug })
 })
 
 
@@ -135,13 +129,16 @@ app.get('/:district/:slug', async function (request, response) {
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/:district/:slug/comment', async function (request, response) {
 
+  // console.log(request.body.story);
+
+
   await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories_comments', {
     method: 'POST',
 
     body: JSON.stringify({
       name: request.body.name,
       comment: request.body.comment,
-      story: request.params.slug,
+      story: request.body.story,
     }),
 
     headers: {

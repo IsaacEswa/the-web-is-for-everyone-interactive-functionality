@@ -50,6 +50,9 @@
             <h2>Laat je bericht achter</h2>
 
             <form action="/{{ district }}/{{ story.slug }}/comment/" method="post">
+                <input type="hidden" name="story" value="{{ story.story }}">
+
+
                 <label for="name">
                     <p>Jouw naam</p>
                     <input name="name" id="name" type="text" placeholder="Voornaam + achternaam " required>
@@ -62,18 +65,6 @@
 
                 <button type="submit">Verzenden</button>
             </form>
-
-            <section class="article-comments-list">
-                <h2>Reacties</h2>
-
-                {% for comment in comments %}
-                <div class="comment">
-                    <p><strong>{{ comment.name }}</strong></p>
-                    <p>{{ comment.comment }}</p>
-                </div>
-                {% endfor %}
-
-            </section>
 
             <h2>Recente reacties</h2>
             <article>
