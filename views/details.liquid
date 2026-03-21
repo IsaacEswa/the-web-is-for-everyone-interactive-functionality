@@ -47,6 +47,8 @@
         </div>
 
         <section class="article-comments">
+            <h2>Laat je bericht achter</h2>
+
             <form action="/{{ district }}/{{ story.slug }}/comment/" method="post">
                 <label for="name">
                     <p>Jouw naam</p>
@@ -60,6 +62,24 @@
 
                 <button type="submit">Verzenden</button>
             </form>
+
+            <section class="article-comments-list">
+                <h2>Reacties</h2>
+
+                {% for comment in comments %}
+                <div class="comment">
+                    <p><strong>{{ comment.name }}</strong></p>
+                    <p>{{ comment.comment }}</p>
+                </div>
+                {% endfor %}
+
+            </section>
+
+            <h2>Recente reacties</h2>
+            <article>
+                <span>Auteur</span>
+                <p>Tekstbericht</p>
+            </article>
         </section>
 
 

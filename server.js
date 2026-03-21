@@ -114,10 +114,19 @@ app.get('/:district/:slug', async function (request, response) {
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
-  // console.log(apiStoriesResponseJSON);
-  // console.log(params);
+  // 1. Haal  artikel op
+  const storyResponse = await fetch(`https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?filter[slug][_eq]=${request.params.slug}`);
+  const storyResponseJSON = await storyResponse.json();
+  const singleStory = storyResponseJSON.data[0];
+  // 2. Haal comments op
+  const commentsResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories_comments');
+  const commentsResponseJSON = await commentsResponse.json();
 
-  response.render('details.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
+  response.render('details.liquid', {
+    stories: apiStoriesResponseJSON.data, district: district, slug: slug, singleStory: singleStory,
+    district: request.params.district,
+    comments: commentsResponseJSON.data,
+  })
 })
 
 
@@ -131,7 +140,8 @@ app.post('/:district/:slug/comment', async function (request, response) {
 
     body: JSON.stringify({
       name: request.body.name,
-      comment: request.body.comment
+      comment: request.body.comment,
+      story: request.params.slug,
     }),
 
     headers: {
