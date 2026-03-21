@@ -119,13 +119,32 @@ app.get('/:district/:slug', async function (request, response) {
 
   response.render('details.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
+
+
+
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
-app.post('/', async function (request, response) {
-  // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
-  // Er is nog geen afhandeling van een POST, dus stuur de bezoeker terug naar /
-  response.redirect(303, '/')
+app.post('/:district/:slug/comment', async function (request, response) {
+
+  await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories_comments', {
+    method: 'POST',
+
+    body: JSON.stringify({
+      name: request.body.name,
+      comment: request.body.comment
+    }),
+
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8'
+    }
+  });
+
+  response.redirect(303, `/${request.params.district}/${request.params.slug}/`);
 })
+
+
+
+
 
 app.use((req, res, next) => {
   res.status(404).send("Deze pagina bestaat niet")

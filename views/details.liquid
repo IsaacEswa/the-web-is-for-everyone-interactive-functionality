@@ -46,6 +46,22 @@
             </svg>
         </div>
 
+        <section class="article-comments">
+            <form action="/{{ district }}/{{ story.slug }}/comment/" method="post">
+                <label for="name">
+                    <p>Jouw naam</p>
+                    <input name="name" id="name" type="text" placeholder="Voornaam + achternaam " required>
+                </label>
+
+                <label for="comment">
+                    <p>Jouw bericht</p>
+                    <input name="comment" id="comment" type="text" placeholder="Ik had een opmerking over..." required>
+                </label>
+
+                <button type="submit">Verzenden</button>
+            </form>
+        </section>
+
 
     </section>
 
