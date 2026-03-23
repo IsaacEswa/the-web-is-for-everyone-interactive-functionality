@@ -413,3 +413,40 @@ header::after {
 .search-result {
     text-align: center;
 }
+
+/* ----- DETAILS PAGE STYLING ----- */
+/* ----- COMMENTS SECTION STYLING ----- */
+.article-comments {
+
+    /* form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    } */
+
+    .comments-field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1em;
+
+        input,
+        textarea {
+            padding: 1em;
+            background-color: var(--light-background);
+            border: none;
+            outline: none;
+            border-radius: 10px;
+        }
+    }
+
+    .primary-button {
+        padding: 0.5em 1.2em;
+        background-color: var(--primary-color);
+        border: none;
+        border-radius: 10px;
+        color: white;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+}

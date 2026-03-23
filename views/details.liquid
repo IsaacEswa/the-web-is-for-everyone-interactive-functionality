@@ -46,35 +46,35 @@
             </svg>
         </div>
 
-        <section class="article-comments">
-            <h2>Laat je bericht achter</h2>
+    </section>
 
-            <form action="/{{ district }}/{{ slug }}/comment/" method="post">
-                <input type="hidden" name="story" value="{{ story.id }}">
+    <section class="article-comments">
+        <h2>Laat je bericht achter</h2>
 
+        <form action="/{{ district }}/{{ slug }}/comment/" method="post">
+            <input type="hidden" name="story" value="{{ story.id }}">
 
-                <label for="name">
-                    <p>Jouw naam</p>
-                    <input name="name" id="name" type="text" placeholder="Voornaam + achternaam " required>
-                </label>
+            <label class="comments-field" for="name">
+                <span>Jouw naam *</span>
+                <input name="name" id="name" type="text" placeholder="Voornaam + achternaam " required>
+            </label>
 
-                <label for="comment">
-                    <p>Jouw bericht</p>
-                    <input name="comment" id="comment" type="text" placeholder="Ik had een opmerking over..." required>
-                </label>
+            <label class="comments-field" for="comment">
+                <span>Jouw bericht *</span>
+                <textarea name="comment" id="comment" rows="3" placeholder="Ik had een opmerking over..."
+                    required></textarea>
+            </label>
 
-                <button type="submit">Verzenden</button>
-            </form>
+            <button class="primary-button" type="submit">Verzenden</button>
+        </form>
 
-            <h2>Recente reacties</h2>
-            {% for comment in story.comments %}
-            <article>
-                <span>{{ comment.name }}</span>
-                <p>{{ comment.comment }}</p>
-            </article>
-            {% endfor %}
-        </section>
-
+        <h2>Recente reacties</h2>
+        {% for comment in story.comments %}
+        <article>
+            <span>{{ comment.name }}</span>
+            <p>{{ comment.comment }}</p>
+        </article>
+        {% endfor %}
 
     </section>
 
