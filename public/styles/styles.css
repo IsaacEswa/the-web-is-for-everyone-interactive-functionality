@@ -491,19 +491,6 @@ header::after {
     /* margin: auto; */
 }
 
-
-/* header::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2px;
-    background: var(--primary-color);
-    width: 95%;
-    margin: auto;
-} */
-
 .details-container.nieuw-west,
 .details-container.zuidoost,
 .details-container.oost {
@@ -565,5 +552,12 @@ header::after {
             padding: 1em;
             background-color: var(--primary-color-lighter);
         }
+    }
+
+    .empty-state {
+
+        text-align: center;
+        opacity: .5;
+        font-style: italic;
     }
 }

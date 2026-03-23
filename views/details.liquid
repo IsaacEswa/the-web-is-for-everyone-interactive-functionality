@@ -80,12 +80,20 @@
     <section class="recent-comments">
         <h2>Recente reacties</h2>
         <div class="recent-comments-container">
+
+            {% if story.comments.size > 0 %}
             {% for comment in story.comments limit:3 %}
             <article class="single-comment">
                 <span>{{ comment.name }}</span>
                 <p>{{ comment.comment }}</p>
             </article>
             {% endfor %}
+            {% else %}
+            <div class="empty-state">
+                <span>Nog geen reacties</span>
+            </div>
+            {% endif %}
+
         </div>
     </section>
 
