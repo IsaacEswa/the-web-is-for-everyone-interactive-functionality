@@ -217,8 +217,8 @@ header::after {
 
 
     * {
-        color: white;
-        fill: white;
+        color: var(--light-text);
+        fill: var(--light-text);
     }
 }
 
@@ -294,7 +294,7 @@ header::after {
     }
 
     h3 {
-        color: white;
+        color: var(--light-text);
         /* width: 90%; */
     }
 }
@@ -341,7 +341,7 @@ header::after {
 
     .article-cover.fallback {
         object-fit: contain;
-        background: white;
+        background: var(--light-background);
     }
 }
 
@@ -369,7 +369,7 @@ header::after {
     }
 
     h3 {
-        color: white;
+        color: var(--light-text);
     }
 
     p {
@@ -385,7 +385,7 @@ header::after {
     }
 
     h3 {
-        color: white;
+        color: var(--light-text);
     }
 
     p {
@@ -417,7 +417,7 @@ header::after {
 /* ----- DETAILS PAGE STYLING ----- */
 .back-link {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 .single-article-cover {
@@ -432,6 +432,18 @@ header::after {
     flex-direction: column;
     gap: 1em;
     padding-top: 1em;
+    padding-bottom: 1em;
+
+    .article-information {
+        display: flex;
+        flex-direction: row;
+        gap: .5em;
+        align-items: center;
+
+        /* svg {
+            fill: var(--light-text);
+        } */
+    }
 
     .article-intro {
         font-weight: bold;
@@ -448,12 +460,63 @@ header::after {
 
         }
     }
+
+    .share-socials {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2em;
+        justify-content: center;
+
+        position: relative;
+        padding-top: 1.5em;
+
+
+        svg {
+            fill: var(--light-text);
+        }
+    }
 }
+
+
+.share-socials::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    background: white;
+    width: 100%;
+    /* margin: auto; */
+}
+
+
+/* header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--primary-color);
+    width: 95%;
+    margin: auto;
+} */
 
 .details-container.nieuw-west,
 .details-container.zuidoost,
 .details-container.oost {
     color: var(--light-text);
+
+    .back-link {
+        color: var(--light-text);
+
+    }
+
+    svg {
+        fill: white;
+    }
 }
 
 /* ----- COMMENTS SECTION STYLING ----- */
@@ -485,7 +548,7 @@ header::after {
         background-color: var(--primary-color);
         border: none;
         border-radius: 10px;
-        color: white;
+        color: var(--light-text);
         font-size: 1em;
         font-weight: bold;
     }
