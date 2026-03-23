@@ -415,6 +415,47 @@ header::after {
 }
 
 /* ----- DETAILS PAGE STYLING ----- */
+.back-link {
+    text-decoration: none;
+    color: white;
+}
+
+.single-article-cover {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-top: 1em;
+
+    .article-intro {
+        font-weight: bold;
+    }
+
+    .article-body {
+
+        img {
+            width: 100%;
+            margin: 1em 0;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+
+        }
+    }
+}
+
+.details-container.nieuw-west,
+.details-container.zuidoost,
+.details-container.oost {
+    color: var(--light-text);
+}
+
 /* ----- COMMENTS SECTION STYLING ----- */
 .article-comments {
 

@@ -34,12 +34,12 @@ body {
 }
 
 main {
-    padding: var(--paddingsidesMobile);
     margin-top: 3em;
 
 }
 
 section {
+    padding: var(--paddingsidesMobile);
     margin-bottom: 3em;
 }
 

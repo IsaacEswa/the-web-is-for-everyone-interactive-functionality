@@ -2,23 +2,23 @@
 
 <main>
 
-    <section class="details-container">
+    <section class="details-container {{ district }}" style="background-color: var(--{{ district }});">
 
         <a class="back-link" href="/{{ district }}">← Terug naar overzicht</a>
 
         {% assign story = stories[0] %}
 
         {% if story.cover %}
-        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
+        <img class="single-article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
         {% else %}
-        <img class="article-cover fallback" src="/assets/Compact_Blurple_{{ district }}.png"
+        <img class="single-article-cover fallback" src="/assets/Compact_Blurple_{{ district }}.png"
             alt="Geen afbeelding beschikbaar">
         {% endif %}
 
         <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
         <h1 class="article-title">{{ story.title }}</h1>
         <p class="article-intro">{{ story.intro }}</p>
-        <p class="article-body">{{ story.body }}</p>
+        <div class="article-body">{{ story.body }}</div>
 
         <div class="share-socials">
             <svg height="20" xmlns="http://www.w3.org/2000/svg"
