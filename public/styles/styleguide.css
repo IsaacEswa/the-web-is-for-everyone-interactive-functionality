@@ -12,6 +12,7 @@
 
 :root {
     --primary-color: #FD4D00;
+    --primary-color-lighter: #FFE4D8;
     --secondary-color: #34356A;
     --nieuw-west: #89A43B;
     --oost: #34356A;
@@ -36,6 +37,10 @@ main {
     padding: var(--paddingsidesMobile);
     margin-top: 3em;
 
+}
+
+section {
+    margin-bottom: 3em;
 }
 
 article,

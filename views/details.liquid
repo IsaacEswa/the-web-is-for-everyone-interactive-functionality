@@ -67,16 +67,21 @@
 
             <button class="primary-button" type="submit">Verzenden</button>
         </form>
-
-        <h2>Recente reacties</h2>
-        {% for comment in story.comments %}
-        <article>
-            <span>{{ comment.name }}</span>
-            <p>{{ comment.comment }}</p>
-        </article>
-        {% endfor %}
-
     </section>
+
+    <section class="recent-comments">
+        <h2>Recente reacties</h2>
+        <div class="recent-comments-container">
+            {% for comment in story.comments limit:3 %}
+            <article class="single-comment">
+                <span>{{ comment.name }}</span>
+                <p>{{ comment.comment }}</p>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+
 
     <section class="featured-articles">
         <h2>Meer bekijken uit {{ district }}?</h2>
