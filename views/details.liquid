@@ -49,8 +49,8 @@
         <section class="article-comments">
             <h2>Laat je bericht achter</h2>
 
-            <form action="/{{ district }}/{{ story.slug }}/comment/" method="post">
-                <input type="hidden" name="story" value="{{ story.story }}">
+            <form action="/{{ district }}/{{ slug }}/comment/" method="post">
+                <input type="hidden" name="story" value="{{ story.id }}">
 
 
                 <label for="name">
@@ -67,10 +67,12 @@
             </form>
 
             <h2>Recente reacties</h2>
+            {% for comment in story.comments %}
             <article>
-                <span>Auteur</span>
-                <p>Tekstbericht</p>
+                <span>{{ comment.name }}</span>
+                <p>{{ comment.comment }}</p>
             </article>
+            {% endfor %}
         </section>
 
 

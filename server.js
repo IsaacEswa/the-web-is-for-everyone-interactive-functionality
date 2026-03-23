@@ -50,6 +50,7 @@ app.get('/', async function (request, response) {
   response.render('index.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
 
+// ZOEKRESULTATEB
 app.get('/search', async function (request, response) {
   const search = request.query.search || ''
 
@@ -69,6 +70,7 @@ app.get('/search', async function (request, response) {
 
 })
 
+// LOCATIEPAGINA
 app.get('/:district', async function (request, response) {
 
   const district = request.params.district
@@ -94,6 +96,7 @@ app.get('/:district', async function (request, response) {
   response.render('district.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
 
+// LOCATIEPAGINA MET NIEUW > OUD
 app.get('/:district/nieuw-oud', async function (request, response) {
 
   const district = request.params.district
@@ -119,6 +122,7 @@ app.get('/:district/nieuw-oud', async function (request, response) {
   response.render('district.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
 
+// LOCATIEPAGINA MET OUD > NIEUW
 app.get('/:district/oud-nieuw', async function (request, response) {
 
   const district = request.params.district
@@ -144,6 +148,7 @@ app.get('/:district/oud-nieuw', async function (request, response) {
   response.render('district.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
 
+// SINGLE ARTIKEL/STORY PAGINA
 app.get('/:district/:slug', async function (request, response) {
 
   const district = request.params.district
@@ -156,31 +161,25 @@ app.get('/:district/:slug', async function (request, response) {
     'sort': '-date',
 
     'filter[district]': district,
-    'filter[story]': story,
+    // 'filter[story]': story,
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status, district, slug, body',
+    'fields': 'id, cover, date, title, intro, status, district, slug, body, comments.*',
   }
 
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
-  const apiCommentsResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories_comments?' + new URLSearchParams(params))
-  const apiCommentsResponseJSON = await apiCommentsResponse.json()
 
 
-  response.render('details.liquid', { stories: apiStoriesResponseJSON.data, comments: apiCommentsResponseJSON.data, district: district, slug: slug })
+  response.render('details.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
-
-
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/:district/:slug/comment', async function (request, response) {
 
   // console.log(request.body.story);
-
-
   await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories_comments', {
     method: 'POST',
 
@@ -197,10 +196,6 @@ app.post('/:district/:slug/comment', async function (request, response) {
 
   response.redirect(303, `/${request.params.district}/${request.params.slug}/`);
 })
-
-
-
-
 
 app.use((req, res, next) => {
   res.status(404).send("Deze pagina bestaat niet")
