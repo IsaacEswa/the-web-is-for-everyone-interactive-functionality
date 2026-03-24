@@ -32,13 +32,15 @@
                         </svg></button>
 
                     {% comment %} Navigatie sectie {% endcomment %}
-                    <h2>Navigeer</h2>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        {% for district in districts %}
-                        <li><a href="/{{ district }}"> {{ district | capitalize }} </a></li>
-                        {% endfor %}
-                    </ul>
+                    <section class="mobile-menu">
+                        <h2>Navigeer</h2>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            {% for district in districts %}
+                            <li><a href="/{{ district }}"> {{ district | capitalize }} </a></li>
+                            {% endfor %}
+                        </ul>
+                    </section>
 
                     {% comment %} Recente artikelen sectie {% endcomment %}
                     {% render 'partials/recent-articles.liquid' %}

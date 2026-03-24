@@ -53,7 +53,8 @@ article img {
 h2 {
     font-size: clamp(1.75rem, 3vw, 2rem);
     /* 28 → 32 */
-    color: var(--dark-text)
+    color: var(--dark-text);
+    padding-bottom: .5em;
 }
 
 h3 {
