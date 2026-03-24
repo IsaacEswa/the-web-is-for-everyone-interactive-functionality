@@ -69,6 +69,17 @@ time {
     font-weight: bold;
 }
 
+/* BUTTONS */
+.primary-button {
+    padding: 0.5em 1.2em;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    color: var(--light-text);
+    font-size: 1em;
+    font-weight: bold;
+}
+
 /* DOELGROEP FILTER */
 .targetgroup-filter-container {
 
