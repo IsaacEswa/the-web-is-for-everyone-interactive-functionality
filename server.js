@@ -74,26 +74,35 @@ app.get('/search', async function (request, response) {
 app.get('/:district', async function (request, response) {
 
   const district = request.params.district
-  const slug = request.params.slug
+  const target_group = request.query.target_group
 
-  const params = {
-    // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
-    // 'sort': '-date',
+  const params = new URLSearchParams()
 
-    // alleen locatie algemeen tonen
-    'filter[district]': district,
+  // filter op district
+  params.set('filter[district][_eq]', district)
 
-    // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
-    'fields': 'cover, date, title, intro, status, district, slug',
+  // filter op target_group (alleen als geselecteerd)
+  if (target_group) {
+    params.set('filter[target_group][_eq]', target_group)
   }
 
-  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  // velden
+  params.set(
+    'fields',
+    'cover, date, title, intro, status, district, slug, target_group'
+  )
+
+  const apiStoriesResponse = await fetch(
+    'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + params.toString()
+  )
+
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
-  // console.log(apiStoriesResponseJSON);
-  // console.log(params);
-
-  response.render('district.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
+  response.render('district.liquid', {
+    stories: apiStoriesResponseJSON.data,
+    district: district,
+    selectedTargetGroup: target_group || ''
+  })
 })
 
 // LOCATIEPAGINA MET NIEUW > OUD

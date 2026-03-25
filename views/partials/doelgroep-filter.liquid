@@ -9,8 +9,28 @@
 
 </section>
 
-<section class="targetgroup-filter-container">
-    {% for target_group in target_groups %}
-    <li><a href="/{{ district }}/{{ target_group }}">{{ target_group }}</a></li>
-    {% endfor %}
-</section>
+<ul class="targetgroup-filter-container">
+
+    <li>
+        <a href="/zuidoost" class="{% if selectedTargetGroup == '' %}active{% endif %}">
+            Alle
+        </a>
+    </li>
+
+    <li>
+        <a href="/zuidoost?target_group=student">Student</a>
+    </li>
+
+    <li>
+        <a href="/zuidoost?target_group=wijkpartner">Wijkpartner</a>
+    </li>
+
+    <li>
+        <a href="/zuidoost?target_group=bewoner">Bewoner</a>
+    </li>
+
+    <li>
+        <a href="/zuidoost?target_group=hva-medewerker">HvA medewerker</a>
+    </li>
+
+</ul>
