@@ -8,3 +8,9 @@
     </select>
 
 </section>
+
+<section class="targetgroup-filter-container">
+    {% for target_group in target_groups %}
+    <li><a href="/{{ district }}/{{ target_group }}">{{ target_group }}</a></li>
+    {% endfor %}
+</section>
