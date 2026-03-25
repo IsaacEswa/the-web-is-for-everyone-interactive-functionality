@@ -148,6 +148,34 @@ app.get('/:district/oud-nieuw', async function (request, response) {
   response.render('district.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
 })
 
+// FILTER OP DOELGROEP
+app.get('/:district/:target_group', async function (request, response) {
+
+  const district = request.params.district
+  const target_group = request.params.target_group
+
+  const params = {
+    // Sorteren op datum, van nieuw naar oud (dus met een minteken ervoor)
+    // 'sort': '-date',
+
+    // alleen locatie algemeen tonen
+    'filter[district]': district,
+
+    'filter[target_group]': target_group,
+
+    // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
+    'fields': 'cover, date, title, target_group, intro, status, district, slug',
+  }
+
+  const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
+  const apiStoriesResponseJSON = await apiStoriesResponse.json()
+
+  // console.log(apiStoriesResponseJSON);
+  // console.log(params);
+
+  response.render('district.liquid', { stories: apiStoriesResponseJSON.data, target_group: target_group, district: district })
+})
+
 // SINGLE ARTIKEL/STORY PAGINA
 app.get('/:district/:slug', async function (request, response) {
 
