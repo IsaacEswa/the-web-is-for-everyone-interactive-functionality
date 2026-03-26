@@ -1,31 +1,27 @@
-{% comment %} <section class="targetgroup-filter-container">
-    <select name="targetgroups" id="targetgroup-filter">
-        <option value="">Voor iedereen</option>
-        <option value="bewoners">Bewoners</option>
-        <option value="wijkpartners">Wijkpartners</option>
-        <option value="studenten">Studenten</option>
-        <option value="medewerkers-hva">Medewerkers HvA</option>
-    </select>
-
-</section> {% endcomment %}
-
 <section class="targetgroup-filter-container">
-    <form action="/{{ district }}" method="GET">
+    <form id="targetgroup-form" action="/{{ district }}" method="GET">
         <label>
             Artikelen voor
-            <select name="target_group">
+            <select name="target_group" id="targetgroup-select">
                 <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen</option>
-                <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>
-                    wijkbewoner</option>
+                <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>wijkbewoner
+                </option>
                 <option value="student" {% if selectedTargetGroup=="student" %}selected{% endif %}>student</option>
                 <option value="wijkpartner" {% if selectedTargetGroup=="wijkpartner" %}selected{% endif %}>wijkpartner
                 </option>
                 <option value="HvA medewerker" {% if selectedTargetGroup=="HvA medewerker" %}selected{% endif %}>HvA
-                    medewerker
-                </option>
+                    medewerker</option>
             </select>
         </label>
-        <input type="submit" value="filter">
-
     </form>
 </section>
+
+<script>
+    // Zodra iemand een optie selecteert, wordt het formulier automatisch gesubmit
+    const targetgroupSelect = document.getElementById('targetgroup-select');
+    const targetgroupForm = document.getElementById('targetgroup-form');
+
+    targetgroupSelect.addEventListener('change', () => {
+        targetgroupForm.submit();
+    });
+</script>
