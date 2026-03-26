@@ -13,15 +13,8 @@
                     medewerker</option>
             </select>
         </label>
+
+        <input id="filter-button" type="submit" value="filter">
+
     </form>
 </section>
-
-<script>
-    // Zodra iemand een optie selecteert, wordt het formulier automatisch gesubmit
-    const targetgroupSelect = document.getElementById('targetgroup-select');
-    const targetgroupForm = document.getElementById('targetgroup-form');
-
-    targetgroupSelect.addEventListener('change', () => {
-        targetgroupForm.submit();
-    });
-</script>
