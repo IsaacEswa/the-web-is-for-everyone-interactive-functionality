@@ -1,4 +1,4 @@
-<section class="targetgroup-filter-container">
+{% comment %} <section class="targetgroup-filter-container">
     <select name="targetgroups" id="targetgroup-filter">
         <option value="">Voor iedereen</option>
         <option value="bewoners">Bewoners</option>
@@ -7,30 +7,26 @@
         <option value="medewerkers-hva">Medewerkers HvA</option>
     </select>
 
+</section> {% endcomment %}
+
+<section class="targetgroup-filter-container"></section>
+<form action="/{{ district }}" method="GET">
+    <label>
+        Artikelen voor
+
+        <select name="target_group">
+            <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen</option>
+            <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>
+                wijkbewoner</option>
+            <option value="student" {% if selectedTargetGroup=="student" %}selected{% endif %}>student</option>
+            <option value="wijkpartner" {% if selectedTargetGroup=="wijkpartner" %}selected{% endif %}>wijkpartner
+            </option>
+            <option value="HvA medewerker" {% if selectedTargetGroup=="HvA medewerker" %}selected{% endif %}>HvA
+                medewerker
+            </option>
+        </select>
+
+        <input type="submit" value="filter">
+    </label>
+</form>
 </section>
-
-<ul class="targetgroup-filter-container">
-
-    <li>
-        <a href="/zuidoost" class="{% if selectedTargetGroup == '' %}active{% endif %}">
-            Alle
-        </a>
-    </li>
-
-    <li>
-        <a href="/zuidoost?target_group=student">Student</a>
-    </li>
-
-    <li>
-        <a href="/zuidoost?target_group=wijkpartner">Wijkpartner</a>
-    </li>
-
-    <li>
-        <a href="/zuidoost?target_group=bewoner">Bewoner</a>
-    </li>
-
-    <li>
-        <a href="/zuidoost?target_group=hva-medewerker">HvA medewerker</a>
-    </li>
-
-</ul>
