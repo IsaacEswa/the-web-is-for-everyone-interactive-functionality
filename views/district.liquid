@@ -8,15 +8,61 @@
 
     <section class="district-hero">
         <h2>{{ district | capitalize }}</h2>
-        {% render 'partials/doelgroep-filter.liquid', district: district, selectedTargetGroup: selectedTargetGroup %}
-        <details>
-            <summary>Sorteer artikelen</summary>
-            <ul>
-                <li class="sort-list"><a href="/{{ district }}">Meest relevant</a></li>
-                <li class="sort-list"><a href="/{{ district }}/oud-nieuw">Oud-nieuw</a></li>
-                <li class="sort-list"><a href="/{{ district }}/nieuw-oud">Nieuw-oud</a></li>
-            </ul>
-        </details>
+
+        <div class="filter-and-sort">
+
+            <div class="targetgroup-filter-container">
+                <form id="targetgroup-form" action="/{{ district }}" method="GET">
+                    <label>
+                        Artikelen voor
+                        <select name="target_group" id="targetgroup-select">
+                            <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen</option>
+                            <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>
+                                wijkbewoner
+                            </option>
+                            <option value="student" {% if selectedTargetGroup=="student" %}selected{% endif %}>student
+                            </option>
+                            <option value="wijkpartner" {% if selectedTargetGroup=="wijkpartner" %}selected{% endif %}>
+                                wijkpartner
+                            </option>
+                            <option value="HvA medewerker" {% if selectedTargetGroup=="HvA medewerker" %}selected{%
+                                endif %}>HvA
+                                medewerker</option>
+                        </select>
+                    </label>
+
+                    <input id="filter-button" type="submit" value="filter">
+
+                </form>
+            </div>
+
+            <div class="articles-sort-container">
+                <details>
+                    <summary>Sorteer artikelen</summary>
+                    <ul>
+                        <li class="sort-list">
+                            <a
+                                href="/{{ district }}{% if selectedTargetGroup != "" %}?target_group={{ selectedTargetGroup }}{% endif %}">
+                                Meest relevant
+                            </a>
+                        </li>
+                        <li class="sort-list">
+                            <a
+                                href="/{{ district }}/oud-nieuw{% if selectedTargetGroup != "" %}?target_group={{ selectedTargetGroup }}{% endif %}">
+                                Oud-nieuw
+                            </a>
+                        </li>
+                        <li class="sort-list">
+                            <a
+                                href="/{{ district }}/nieuw-oud{% if selectedTargetGroup != "" %}?target_group={{ selectedTargetGroup }}{% endif %}">
+                                Nieuw-oud
+                            </a>
+                        </li>
+                    </ul>
+                </details>
+            </div>
+
+        </div>
 
     </section>
 

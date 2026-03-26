@@ -314,14 +314,32 @@ header::after {
 
 /* ----- DISTRICT PAGE STYLING ----- */
 .district-hero {
-    display: flex;
+
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    
 
     margin-top: 3em;
-    margin-bottom: 1.5em;
+    margin-bottom: 1.5em; */
+    h2 {
+        text-align: center;
+        padding-bottom: 1em;
+    }
 
+}
+
+.filter-and-sort {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.targetgroup-filter-container {
+    #targetgroup-form label {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .single-article {
