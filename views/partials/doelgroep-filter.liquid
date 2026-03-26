@@ -12,10 +12,7 @@
 <section class="targetgroup-filter-container">
     <form action="/{{ district }}" method="GET">
         <label>
-            {{ district }}
             Artikelen voor
-
-
             <select name="target_group">
                 <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen</option>
                 <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>
@@ -27,8 +24,8 @@
                     medewerker
                 </option>
             </select>
-
-            <input type="submit" value="filter">
         </label>
+        <input type="submit" value="filter">
+
     </form>
 </section>
