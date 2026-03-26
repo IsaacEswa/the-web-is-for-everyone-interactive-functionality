@@ -8,34 +8,7 @@
 
     <section class="district-hero">
         <h2>{{ district | capitalize }}</h2>
-        {% comment %} {% render 'partials/doelgroep-filter.liquid' %} {% endcomment %}
-
-        <section class="targetgroup-filter-container">
-            <form action="/{{ district }}" method="GET">
-                <label>
-                    Artikelen voor
-
-
-                    <select name="target_group">
-                        <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen</option>
-                        <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>
-                            wijkbewoner</option>
-                        <option value="student" {% if selectedTargetGroup=="student" %}selected{% endif %}>student
-                        </option>
-                        <option value="wijkpartner" {% if selectedTargetGroup=="wijkpartner" %}selected{% endif %}>
-                            wijkpartner
-                        </option>
-                        <option value="HvA medewerker" {% if selectedTargetGroup=="HvA medewerker" %}selected{% endif
-                            %}>HvA
-                            medewerker
-                        </option>
-                    </select>
-
-                    <input type="submit" value="filter">
-                </label>
-            </form>
-        </section>
-
+        {% render 'partials/doelgroep-filter.liquid', district: district, selectedTargetGroup: selectedTargetGroup %}
         <details>
             <summary>Sorteer artikelen</summary>
             <ul>
