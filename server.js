@@ -73,24 +73,30 @@ app.get('/search', async function (request, response) {
 // LOCATIEPAGINA
 app.get('/:district', async function (request, response) {
 
+
   const district = request.params.district
-  const target_group = request.query.target_group
+
+  console.log('district:', district)
+  console.log('target_group:', request.query.target_group)
+
 
   const params = new URLSearchParams()
+  // const target_group = request.query.target_group
+
 
   // filter op district
   params.set('filter[district][_eq]', district)
 
   // filter op target_group (alleen als geselecteerd)
-  if (target_group) {
-    params.set('filter[target_group][_eq]', target_group)
+  if (request.query.target_group) {
+    params.set('filter[target_group][_eq]', request.query.target_group)
   }
 
   // velden
-  params.set(
-    'fields',
-    'cover, date, title, intro, status, district, slug, target_group'
-  )
+  // params.set(
+  //   'fields',
+  //   'cover, date, title, intro, status, district, slug, target_group'
+  // )
 
   const apiStoriesResponse = await fetch(
     'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + params.toString()
@@ -101,7 +107,7 @@ app.get('/:district', async function (request, response) {
   response.render('district.liquid', {
     stories: apiStoriesResponseJSON.data,
     district: district,
-    selectedTargetGroup: target_group || ''
+    selectedTargetGroup: request.query.target_group || ''
   })
 })
 
