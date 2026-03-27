@@ -11,7 +11,7 @@
 
         <div class="filter-and-sort">
 
-            <div class="targetgroup-filter-container">
+            {% comment %} <div class="targetgroup-filter-container">
                 <form id="targetgroup-form" action="/{{ district }}" method="GET">
                     <label>
                         Artikelen voor
@@ -33,9 +33,9 @@
 
                     <input id="filter-button" type="submit" value="filter">
                 </form>
-            </div>
+            </div> {% endcomment %}
 
-            <div class="articles-sort-container">
+            {% comment %} <div class="articles-sort-container">
                 <details>
                     <summary>Sorteer artikelen</summary>
                     <ul>
@@ -59,7 +59,44 @@
                         </li>
                     </ul>
                 </details>
-            </div>
+            </div> {% endcomment %}
+
+            <form action="/{{ district }}" method="GET">
+                <label>
+                    Artikelen voor
+
+                    <select name="target_group">
+                        <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen
+                        </option>
+                        <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>
+                            Wijkbewoner
+                        </option>
+                        <option value="student" {% if selectedTargetGroup=="student" %}selected{% endif %}>Student
+                        </option>
+                        <option value="wijkpartner" {% if selectedTargetGroup=="wijkpartner" %}selected{% endif %}>
+                            Wijkpartner
+                        </option>
+                        <option value="HvA medewerker" {% if selectedTargetGroup=="HvA medewerker" %}selected{% endif
+                            %}>HvA
+                            medewerker</option>
+                    </select>
+                </label>
+
+                <label>
+                    Sorteer op datum
+
+                    <select name="date">
+                        <option value="" {% if selectedSort=="" %}selected{% endif %} disabled hidden>kies een volgorde
+                        </option>
+                        <option value="oud-nieuw" {% if selectedSort=="oud-nieuw" %}selected{% endif %}>
+                            Oud naar nieuw</option>
+                        <option value="nieuw-oud" {% if selectedSort=="nieuw-oud" %}selected{% endif %}>Nieuw naar oud
+                        </option>
+                    </select>
+                </label>
+
+                <input type="submit" value="filter">
+            </form>
 
         </div>
 
