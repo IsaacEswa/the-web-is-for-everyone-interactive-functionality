@@ -65,7 +65,7 @@
                 <label>
                     Artikelen voor
 
-                    <select name="target_group">
+                    <select id="targetgroup-select" name="target_group">
                         <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen
                         </option>
                         <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>
@@ -85,7 +85,7 @@
                 <label>
                     Sorteer op datum
 
-                    <select name="date">
+                    <select id="sort-select" name="date">
                         <option value="" {% if selectedSort=="" %}selected{% endif %} disabled hidden>kies een volgorde
                         </option>
                         <option value="oud-nieuw" {% if selectedSort=="oud-nieuw" %}selected{% endif %}>
@@ -95,7 +95,7 @@
                     </select>
                 </label>
 
-                <input type="submit" value="filter">
+                <input id="filter-button" type="submit" value="filter">
             </form>
 
         </div>
