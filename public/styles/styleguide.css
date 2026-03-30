@@ -78,6 +78,11 @@ time {
     color: var(--light-text);
     font-size: 1em;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.primary-button:active {
+    background-color: green;
 }
 
 /* DOELGROEP FILTER */
