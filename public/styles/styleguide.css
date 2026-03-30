@@ -69,6 +69,19 @@ time {
     font-weight: bold;
 }
 
+input,
+textarea {
+    padding: 1em;
+    background-color: var(--light-background);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+select {
+    height: 3em;
+}
+
 /* BUTTONS */
 .primary-button {
     padding: 0.5em 1.2em;

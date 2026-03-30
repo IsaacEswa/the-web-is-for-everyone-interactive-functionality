@@ -62,8 +62,8 @@
             </div> {% endcomment %}
 
             <form action="/{{ district }}" method="GET">
-                <label>
-                    Artikelen voor
+                <label class="targetgroup-select-container">
+                    <span>Artikelen voor</span>
 
                     <select id="targetgroup-select" name="target_group">
                         <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen
@@ -82,8 +82,8 @@
                     </select>
                 </label>
 
-                <label>
-                    Sorteer op datum
+                <label class="sort-select-container">
+                    <span>Sorteer op datum</span>
 
                     <select id="sort-select" name="date">
                         <option value="" {% if selectedSort=="" %}selected{% endif %} disabled hidden>kies een volgorde
@@ -98,6 +98,10 @@
                 <input id="filter-button" type="submit" value="filter">
             </form>
 
+            {% comment %} <p>Je hebt gefilterd op {{ selectedTargetGroup }}</p>
+            <p>Je hebt gesorteerd op {{ selectedSort }}</p> {% endcomment %}
+            {% comment %} <p>Er zijn {{ stories | size }} artikelen gevonden</p> {% endcomment %}
+
         </div>
 
     </section>
@@ -107,6 +111,8 @@
     {% endif %}
 
     <section class="district-articles">
+        <p><b>{{ stories | size }}</b> artikel(en) gevonden</p>
+
         {% for story in stories %}
         <a href="/{{ story.district }}/{{ story.slug }}" class="single-article-link">
             <article class="single-article {{ story.district}}">
