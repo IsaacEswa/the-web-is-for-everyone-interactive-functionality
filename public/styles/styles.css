@@ -589,6 +589,9 @@ header::after {
 
 /* footer */
 footer {
+    position: relative;
+    padding-top: 3em;
+
     .footer-col-01 {
         .footer-logo {
             width: 50%;
@@ -635,4 +638,16 @@ footer {
 
 
     }
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    background: var(--primary-color);
+    width: 95%;
+    margin: auto;
 }
