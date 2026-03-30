@@ -581,3 +581,53 @@ header::after {
         font-style: italic;
     }
 }
+
+/* footer */
+footer {
+    .footer-col-01 {
+        .footer-logo {
+            width: 50%;
+        }
+    }
+
+    .footer-col-02 {
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: .5em;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+
+    .footer-col-03 {}
+
+    .footer-col-04 {
+
+        .newsletter-form {
+            display: flex;
+            width: 100%;
+            align-items: flex-end;
+            gap: .5em;
+
+            .comments-field {
+                flex: 1;
+            }
+
+            input {
+                padding: 1em;
+                background-color: var(--light-background);
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                width: 100%;
+            }
+        }
+
+
+    }
+}

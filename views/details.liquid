@@ -132,38 +132,4 @@
 
 </main>
 
-<footer>
-    <section class="footer-col-01">
-        <img class="footer-logo" src="../assets/Compact_Blurple_algemeen.png" alt="">
-    </section>
-    <section class="footer-col-02">
-        <h2>Locaties</h2>
-        <ul>
-            {% assign districts = "algemeen,nieuw-west,zuidoost,oost" | split: "," %}
-            {% for district in districts %}
-            <li><a href="/{{ district }}"> {{ district | capitalize }} </a></li>
-            {% endfor %}
-        </ul>
-    </section>
-    <section class="footer-col-03">
-        <h2>Edities</h2>
-
-    </section>
-    <section class="footer-col-04">
-        <h2>Schrijf je in voor de nieuwsbrief</h2>
-
-
-        <form action="#" method="post">
-            {% comment %} <input type="hidden" name="story" value=""> {% endcomment %}
-
-            <label class="comments-field" for="name">
-                <span>Jouw e-mailadres *</span>
-                <input name="e-mail" id="e-mail"" type=" mail" placeholder="E-mailadres" required>
-            </label>
-
-            <button class="primary-button" type="submit">Aanmelden</button>
-        </form>
-    </section>
-</footer>
-
 {% render 'partials/foot.liquid' %}
