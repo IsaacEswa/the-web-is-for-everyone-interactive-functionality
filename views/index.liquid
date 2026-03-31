@@ -7,7 +7,8 @@
 
         {% assign latest = stories[0] %}
         <a href="/{{ latest.district }}/{{ latest.slug }}<" class="single-article-link">
-            <article class="featured-article overlay">
+            <article class="featured-article overlay"
+                style="background-image: url('https://fdnd-agency.directus.app/assets/{{ latest.cover }}');">
                 <div class="featured-article-content">
                     <div class="featured-article-information">
                         <span>Laatste nieuws</span>
