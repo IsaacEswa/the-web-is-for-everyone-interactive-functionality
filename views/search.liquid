@@ -4,6 +4,9 @@
     <section class="main-content">
 
         <h2 class="search-result">Zoekresultaten voor "{{ search }}"</h2>
+        <p class="search-count"><b>{{ stories | size }}</b> artikel(en) gevonden</p>
+
+
 
         {% assign districts = "algemeen,nieuw-west,zuidoost,oost" | split: "," %}
 
@@ -12,6 +15,7 @@
 
         {% if district_stories.size > 0 %}
         <section class="home-articles">
+
 
             <div class="home-district-top">
                 <h2>{{ district | capitalize }}</h2>
