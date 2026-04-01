@@ -41,6 +41,14 @@ Figma ontwerp: https://www.figma.com/design/3OBR5yVABlBnnT8Vi6vDdl/Buurtcampuskr
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+Op de homepagina staat als call to action het meest recente artikel. Vervolgens zie je de districten met de 3 meest recente artikelen per distrct en een knop om naar de desbetreffende district te gaan.
+
+Ook een sidebar die meebeweegt als je scrolled met de 3 recente artikelen en het archief.
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/024fb868-b5df-46d8-861e-a11bc0e39ceb" />
+
+
+
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
