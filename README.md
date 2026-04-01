@@ -88,7 +88,10 @@ In dit project wordt er gebruik gemaakt van Node.js en Express om de webserver t
 * **Ideal state**: Een leeg formulier en er zijn al comments of een comment gepost.
 * **Empty state**: Leeg formulier en er zijn nog geen comments, er wordt ook een bericht getoond ("Nog geen reactites") voor de gebruiksvriendelijkheid
 * **Error state**: Formulier velden krijgen een rode border wanneer de gebruiker veld(en) leeg heeft gelaten en al op verzenden klikt
-* **Success state**: Een comment is succesvol toegevoegd aan de comments section en het formulier wordt weer leeg. 
+* **Success state**: Een comment is succesvol toegevoegd aan de comments section en het formulier wordt weer leeg.
+
+### Implementatie
+Dit wordt gerealiseerd met `if` en `else` tags [Voorbeeld](https://github.com/IsaacEswa/the-web-is-for-everyone-interactive-functionality/blob/aa2a43fdf44b2a1333fa0d4c740227928e85d28d/views/details.liquid#L84-L95)
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/c74a733f-e851-4f91-b2a4-264074cc14a5" />
 
