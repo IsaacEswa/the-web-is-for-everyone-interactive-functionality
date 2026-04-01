@@ -98,7 +98,13 @@ Dit wordt gerealiseerd met `if` en `else` tags [Voorbeeld](https://github.com/Is
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
+1. `npm install` in de terminal
+Hiermee installeer je de benodigde packages zoals express & cookie-parser.
 
+2. `npm start` in de terminal
+Hiermee start je het project.
+
+3. Open vervolgens http://localhost:8000 om de website te zien in de browser.
 
 ## Bronnen
 
