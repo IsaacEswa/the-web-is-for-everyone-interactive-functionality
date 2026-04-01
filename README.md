@@ -36,6 +36,9 @@ Figma ontwerp: https://www.figma.com/design/3OBR5yVABlBnnT8Vi6vDdl/Buurtcampuskr
 * **Kleurgebruik**: Kleuren komen vooral vanuit de districts, website zelf is minimalistisch en rustig zodat dit uitnodigender en rustiger is voor de gebruiker. Felle oranje knoppen voor de Call-To-Action zodat deze goed opvallen en verbetert de gebruikerservaring.
 * **Consistente UI**: De artikel cards hebben allemaal dezelfde layout en vormgeving. De afgeronde hoeken maken de website rustiger en zachter.
 
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/4eaacec3-a91f-4636-a7e0-e7418856f2bd" />
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/39ee685e-4c17-4282-81a6-ceb17fd2f770" />
+
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
 
