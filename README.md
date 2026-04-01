@@ -70,9 +70,9 @@ In dit project wordt er gebruik gemaakt van Node.js en Express om de webserver t
 
 ### Route-configuraties
 
-* Homepagina /: De webserver haalt gegevens op via de Directus API en toont deze op de hoofdpagina index.liquid.
-* Districtpagina /:district/: Hier worden artikelen opgehaald van desbetreffende district en kunnen gebruikers filteren op doelgroep. De data wordt weergegeven in district.liquid.
-* Detailpagina /:district/:slug/: Deze route haalt dynamisch de artikel op met inhoud. Op deze pagina's kunnen gebruikers een reactie plaatsen en wordt het per artikel opgeslagen
+* Homepagina `/`: De webserver haalt gegevens op via de Directus API en toont deze op de hoofdpagina `index.liquid.`
+* Districtpagina `/:district/`: Hier worden artikelen opgehaald van desbetreffende district en kunnen gebruikers filteren op doelgroep. De data wordt weergegeven in `district.liquid`.
+* Detailpagina `/:district/:slug/`: Deze route haalt dynamisch de artikel op met inhoud.Op deze pagina's kunnen gebruikers een reactie plaatsen en wordt het per artikel opgeslagen, met deze POST methode: `/${request.params.district}/${request.params.slug}/`
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
