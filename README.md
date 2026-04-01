@@ -84,6 +84,12 @@ In dit project wordt er gebruik gemaakt van Node.js en Express om de webserver t
 * Data opslaan wordt uitgevoerd via een POST-aanroep. De server maakt een API-aanroep om de benodigde gegevens op te halen in JSON-formaat en slaat deze op in de database. [Voorbeeld](https://github.com/IsaacEswa/the-web-is-for-everyone-interactive-functionality/blob/c858a5eb4ab5dfbbf10c4d2a11d9c46dd8d88fb9/server.js#L281-L299)
 
 ### UI-states stack
+### Detailpagina | Comment section (in progress)
+* **Ideal state**: Een leeg formulier en er zijn al comments of een comment gepost.
+* **Empty state**: Leeg formulier en er zijn nog geen comments, er wordt ook een bericht getoond ("Nog geen reactites") voor de gebruiksvriendelijkheid
+* **Error state**: Formulier velden krijgen een rode border wanneer de gebruiker veld(en) leeg heeft gelaten en al op verzenden klikt
+* **Success state**: Een comment is succesvol toegevoegd aan de comments section en het formulier wordt weer leeg. 
+
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/c74a733f-e851-4f91-b2a4-264074cc14a5" />
 
 
