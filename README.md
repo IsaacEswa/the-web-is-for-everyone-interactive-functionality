@@ -1,13 +1,18 @@
 # Buurtcampuskrant
 Het platform voor bewoners, wijkpartners, studenten en HvA medewerkers om kennis te laten maken en te informeren over de laatste ontwikkelingen en programma's van de Buurtcampus Amsterdam.
 
-Deze sprint lag de focus op het ontwikkelen van de districtpagina's en de detailpagina's. Alle artikelen worden dynamisch opgehaald uit Directus.
+Deze sprint lag de focus op het ontwikkelen van de districtpagina's en de detailpagina's. Alle artikelen worden dynamisch opgehaald uit Directus. De website is alleen nog beschikbaar voor mobiel
 
 ## Wat is Buurtcampuskrant
 Het doel is gemeenschap op te bouwen, HvA netwerk en betrokkenheid te vergroten en de diverse initiatieven binnen de Buurtcampus zichtbaar te maken. Daarmee willen we de weg van bewoners, wijkpartners, studenten, docenten en andere HvA medewerkers naar de Buurtcampus makkelijker maken en vergroten.
 
 ## Vraag opdrachtgever
 Ontwerp en ontwikkel de digitale krant voor de Buurtcampus Amsterdam.
+
+Link naar huidige website: https://the-web-is-for-everyone-interactive-oir7.onrender.com/
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/4d278684-2dee-4a92-a2b6-a878217d3c31" />
+
 
 ## Inhoudsopgave
 
@@ -22,6 +27,8 @@ Ontwerp en ontwikkel de digitale krant voor de Buurtcampus Amsterdam.
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual of video toe 📸 -->
 <!-- Voeg een link toe naar GitHub Pages 🌐-->
+### Het ontwerp
+Éen belangrijk puntje was dat de doorklik naar de districten en artikelen heel makkelijk moet gaan. En dat je duidelijk kan zien op welk district je bent. Dit heb ik gedaan door de kleuren te gebruiken van het desbetreffend district. En door op de homepagina gemakkelijk navigatie naar de districts.
 
 
 
