@@ -30,7 +30,11 @@ Link naar huidige website: https://the-web-is-for-everyone-interactive-oir7.onre
 ### Het ontwerp
 Éen belangrijk puntje was dat de doorklik naar de districten en artikelen heel makkelijk moet gaan. En dat je duidelijk kan zien op welk district je bent. Dit heb ik gedaan door de kleuren te gebruiken van het desbetreffend district. En door op de homepagina gemakkelijk navigatie naar de districts.
 
+Figma ontwerp: https://www.figma.com/design/3OBR5yVABlBnnT8Vi6vDdl/Buurtcampuskrant?node-id=0-1&t=jriLkkJgdD5fBE6Q-1
 
+### Ontwerpkeuzes
+* **Kleurgebruik**: Kleuren komen vooral vanuit de districts, website zelf is minimalistisch en rustig zodat dit uitnodigender en rustiger is voor de gebruiker. Felle oranje knoppen voor de Call-To-Action zodat deze goed opvallen en verbetert de gebruikerservaring.
+* **Consistente UI**: De artikel cards hebben allemaal dezelfde layout en vormgeving. De afgeronde hoeken maken de website rustiger en zachter.
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
