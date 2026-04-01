@@ -6,7 +6,7 @@
     <section class="main-content">
 
         {% assign latest = stories[0] %}
-        <a href="/{{ latest.district }}/{{ latest.slug }}<" class="single-article-link">
+        <a href="/{{ latest.district }}/{{ latest.slug }}" class="single-article-link">
             <article class="featured-article overlay"
                 style="background-image: url('https://fdnd-agency.directus.app/assets/{{ latest.cover }}');">
                 <div class="featured-article-content">
@@ -59,10 +59,6 @@
         {% endfor %}
 
     </section>
-
-    {% comment %} <aside class="sticky-sidebar">
-        {% render 'partials/recent-articles.liquid' %}
-    </aside> {% endcomment %}
 
 </main>
 

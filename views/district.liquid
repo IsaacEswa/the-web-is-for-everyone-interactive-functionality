@@ -1,6 +1,5 @@
 {% render 'partials/head.liquid' %}
 
-
 <main>
 
     {% assign districts = "algemeen,nieuw-west,zuidoost,oost" | split: "," %}
@@ -10,56 +9,6 @@
         <h2>{{ district | capitalize }}</h2>
 
         <div class="filter-and-sort">
-
-            {% comment %} <div class="targetgroup-filter-container">
-                <form id="targetgroup-form" action="/{{ district }}" method="GET">
-                    <label>
-                        Artikelen voor
-                        <select name="target_group" id="targetgroup-select">
-                            <option value="" {% if selectedTargetGroup=="" %}selected{% endif %}>Iedereen</option>
-                            <option value="wijkbewoner" {% if selectedTargetGroup=="wijkbewoner" %}selected{% endif %}>
-                                wijkbewoner
-                            </option>
-                            <option value="student" {% if selectedTargetGroup=="student" %}selected{% endif %}>student
-                            </option>
-                            <option value="wijkpartner" {% if selectedTargetGroup=="wijkpartner" %}selected{% endif %}>
-                                wijkpartner
-                            </option>
-                            <option value="HvA medewerker" {% if selectedTargetGroup=="HvA medewerker" %}selected{%
-                                endif %}>HvA
-                                medewerker</option>
-                        </select>
-                    </label>
-
-                    <input id="filter-button" type="submit" value="filter">
-                </form>
-            </div> {% endcomment %}
-
-            {% comment %} <div class="articles-sort-container">
-                <details>
-                    <summary>Sorteer artikelen</summary>
-                    <ul>
-                        <li class="sort-list">
-                            <a
-                                href="/{{ district }}{% if selectedTargetGroup != "" %}?target_group={{ selectedTargetGroup }}{% endif %}">
-                                Meest relevant
-                            </a>
-                        </li>
-                        <li class="sort-list">
-                            <a
-                                href="/{{ district }}/oud-nieuw{% if selectedTargetGroup != "" %}?target_group={{ selectedTargetGroup }}{% endif %}">
-                                Oud-nieuw
-                            </a>
-                        </li>
-                        <li class="sort-list">
-                            <a
-                                href="/{{ district }}/nieuw-oud{% if selectedTargetGroup != "" %}?target_group={{ selectedTargetGroup }}{% endif %}">
-                                Nieuw-oud
-                            </a>
-                        </li>
-                    </ul>
-                </details>
-            </div> {% endcomment %}
 
             <form action="/{{ district }}" method="GET">
                 <label class="targetgroup-select-container">
@@ -97,11 +46,6 @@
 
                 <input id="filter-button" type="submit" value="filter">
             </form>
-
-            {% comment %} <p>Je hebt gefilterd op {{ selectedTargetGroup }}</p>
-            <p>Je hebt gesorteerd op {{ selectedSort }}</p> {% endcomment %}
-            {% comment %} <p>Er zijn {{ stories | size }} artikelen gevonden</p> {% endcomment %}
-
         </div>
 
     </section>

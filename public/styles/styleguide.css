@@ -109,7 +109,6 @@ select {
 
         padding: 5px 10px;
         border-radius: 10px;
-        /* font-size: 1rem; */
         background-color: var(--nieuw-west);
         cursor: pointer;
         color: white;
