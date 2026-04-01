@@ -43,9 +43,14 @@ Figma ontwerp: https://www.figma.com/design/3OBR5yVABlBnnT8Vi6vDdl/Buurtcampuskr
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
 Op de homepagina staat als call to action het meest recente artikel. Vervolgens zie je de districten met de 3 meest recente artikelen per distrct en een knop om naar de desbetreffende district te gaan.
 
-Ook een sidebar die meebeweegt als je scrolled met de 3 recente artikelen en het archief.
+Ook een sidebar op desktop die meebeweegt als je scrolled met de 3 recente artikelen en het archief.
 
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/457aad08-f1be-47f6-899d-e0d09b5a2637" />
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/024fb868-b5df-46d8-861e-a11bc0e39ceb" />
+
+Op de districtpagina zie je direct op welk district je je bevindt en kan je filteren op de doelgroep en sorteren op nieuw -> oud of oud -> nieuw. Deze filtering en sortering wordt automatisch toegepast om de gebruiksvriendelijkheid te verbeteren. Ook wordt het aantal getoond voor de gebruiksvriendelijk.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/f51fc2da-5dbc-46b4-a4bd-6b9d503e6859" />
 
 
 
