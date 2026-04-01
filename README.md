@@ -59,18 +59,20 @@ https://github.com/user-attachments/assets/ef7f0233-d237-477c-87ee-d00182d820cf
 ### Detailpagina
 Hier zie je de content van het artikel, gebruikers kunnen onder het artikel een opmerking plaatsen. Onderaan staat er weer een navigatie zodat je door kan klikken naar andere artikelen van het desbetreffende district.
 
-
 <img width="200" alt="image" src="https://github.com/user-attachments/assets/e91e00c4-afad-4ecd-b8f0-f6becdb37da6" />
 
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/3b3c5fb5-1614-4c83-8c4c-c167929c3c31" />
 
 
-
-
-
-
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
+In dit project wordt er gebruik gemaakt van Node.js en Express om de webserver te beheren. Voor het genereren van dynamische HTML-pagina's wordt Liquid gebruikt, wat de webpagina's flexibel en makkelijk te onderhouden maakt. De opdrachtgever kan zelf artikelen toevoegen en die worden da dynamisch geladen op de website.
+
+### Route-configuraties
+
+* Homepagina /: De webserver haalt gegevens op via de Directus API en toont deze op de hoofdpagina index.liquid.
+* Districtpagina /:district/: Hier worden artikelen opgehaald van desbetreffende district en kunnen gebruikers filteren op doelgroep. De data wordt weergegeven in district.liquid.
+* Detailpagina /:district/:slug/: Deze route haalt dynamisch de artikel op met inhoud. Op deze pagina's kunnen gebruikers een reactie plaatsen en wordt het per artikel opgeslagen
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
