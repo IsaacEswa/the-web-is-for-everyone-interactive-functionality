@@ -69,10 +69,23 @@ Hier zie je de content van het artikel, gebruikers kunnen onder het artikel een 
 In dit project wordt er gebruik gemaakt van Node.js en Express om de webserver te beheren. Voor het genereren van dynamische HTML-pagina's wordt Liquid gebruikt, wat de webpagina's flexibel en makkelijk te onderhouden maakt. De opdrachtgever kan zelf artikelen toevoegen en die worden da dynamisch geladen op de website.
 
 ### Route-configuraties
-
 * Homepagina `/`: De webserver haalt gegevens op via de Directus API en toont deze op de hoofdpagina `index.liquid.`
 * Districtpagina `/:district/`: Hier worden artikelen opgehaald van desbetreffende district en kunnen gebruikers filteren op doelgroep. De data wordt weergegeven in `district.liquid`.
 * Detailpagina `/:district/:slug/`: Deze route haalt dynamisch de artikel op met inhoud.Op deze pagina's kunnen gebruikers een reactie plaatsen en wordt het per artikel opgeslagen, met deze POST methode: `/${request.params.district}/${request.params.slug}/`
+
+### Dynamische data
+* Data ophalen via API: De server maakt een API-aanroep om de benodigde gegevens op te halen in JSON-formaat. [Voorbeeld](https://github.com/IsaacEswa/the-web-is-for-everyone-interactive-functionality/blob/c858a5eb4ab5dfbbf10c4d2a11d9c46dd8d88fb9/server.js#L44)
+* Data doorgeven aan Liquid: De opgehaalde data wordt doorgegeven aan de Liquid-template via response.render(). [Voorbeeld](https://github.com/IsaacEswa/the-web-is-for-everyone-interactive-functionality/blob/c858a5eb4ab5dfbbf10c4d2a11d9c46dd8d88fb9/server.js#L276)
+* Data verwerken in Liquid: In de Liquid-template wordt de data met behulp van loops en variabelen verwerkt en weergegeven. [Variabelen](https://github.com/IsaacEswa/the-web-is-for-everyone-interactive-functionality/blob/c858a5eb4ab5dfbbf10c4d2a11d9c46dd8d88fb9/views/details.liquid#L27-L29)
+[Loops](https://github.com/IsaacEswa/the-web-is-for-everyone-interactive-functionality/blob/c858a5eb4ab5dfbbf10c4d2a11d9c46dd8d88fb9/views/district.liquid#L60-L75)
+
+
+* HTML genereren en tonen: Liquid genereert de HTML, die naar de browser wordt gestuurd en zichtbaar wordt voor de gebruiker.
+* Data opslaan wordt uitgevoerd via een POST-aanroep. De server maakt een API-aanroep om de benodigde gegevens op te halen in JSON-formaat en slaat deze op in de database. [Voorbeeld](https://github.com/IsaacEswa/the-web-is-for-everyone-interactive-functionality/blob/c858a5eb4ab5dfbbf10c4d2a11d9c46dd8d88fb9/server.js#L281-L299)
+
+### UI-states stack
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/c74a733f-e851-4f91-b2a4-264074cc14a5" />
+
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
