@@ -14,6 +14,9 @@ header {
         img {
             width: 75%;
 
+            @media (min-width: 768px) {
+                width: 50%;
+            }
         }
     }
 }
@@ -28,6 +31,10 @@ header::after {
     background: var(--primary-color);
     width: 95%;
     margin: auto;
+
+    @media (min-width: 768px) {
+        width: 97%;
+    }
 }
 
 .sidebar {
@@ -108,6 +115,21 @@ header::after {
     .navigation {
         display: none;
 
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+
+            li,
+            a {
+                width: 100%;
+                list-style: none;
+                text-decoration: none;
+                color: black;
+                margin-bottom: 0.5em;
+            }
+        }
+
         a {
             font-weight: 600;
         }
@@ -130,6 +152,10 @@ header::after {
 
         svg {
             fill: var(--secondary-color);
+        }
+
+        @media (min-width: 768px) {
+            display: none;
         }
     }
 }
@@ -199,6 +225,19 @@ header::after {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+
+        h3 {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* number of lines to show */
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
 
     .article-cover {
         height: 200px;
