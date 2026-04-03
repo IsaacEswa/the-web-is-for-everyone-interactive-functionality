@@ -45,16 +45,14 @@ header {
         }
     } */
 
-    .desktop-navigation {
+    /* .desktop-navigation {
         display: none;
 
         @media (min-width: 768px) {
             display: flex;
             flex-direction: row;
-            /* gap: 2em; */
             gap: clamp(1em, 3vw, 3em);
 
-            /* width: 100%; */
 
             li,
             a {
@@ -70,7 +68,7 @@ header {
         a {
             font-weight: 600;
         }
-    }
+    } */
 
     .nav-search {
         padding-right: .5em;
@@ -155,91 +153,64 @@ header::after {
         line-clamp: 2;
         -webkit-box-orient: vertical;
     }
-
-    .recent-articles {
-
-        img,
-        time,
-        span,
-        svg {
-            display: none;
-        }
-    }
-
-    .archive {
-        width: 100%;
-
-        .single-archive {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-
-            h3 {
-                font-weight: normal;
-            }
-        }
-    }
 }
 
 .sidebar.open {
     display: flex;
 }
 
-.menu {
+/* .menu {
     display: flex;
     flex-direction: row;
     gap: 0.7em;
-    align-items: center;
+    align-items: center; */
 
-    .desktop-navigation {
-        display: none;
+.desktop-navigation {
+    display: none;
 
-        @media (min-width: 768px) {
-            display: flex;
-            flex-direction: row;
-            gap: 1em;
-
-            li,
-            a {
-                width: 100%;
-                list-style: none;
-                text-decoration: none;
-                color: black;
-                margin-bottom: 0.5em;
-            }
-        }
-
-        a {
-            font-weight: 600;
-        }
-    }
-
-    #close-icon {
-        text-align: right;
-        /* padding-right: 15px; */
-        margin-top: 2px;
+    @media (min-width: 768px) {
         display: flex;
-        align-self: end;
-    }
+        flex-direction: row;
+        gap: clamp(1em, 3vw, 3em);
 
-    #close-icon,
-    #hamburger-icon {
-        cursor: pointer;
-        line-height: 0;
-        background: none;
-        border: none;
-
-        svg {
-            fill: var(--secondary-color);
-        }
-
-        @media (min-width: 768px) {
-            display: none;
+        li,
+        a {
+            width: 100%;
+            list-style: none;
+            text-decoration: none;
+            color: black;
+            margin-bottom: 0.5em;
+            /* font-weight: 400; */
+            word-break: keep-all;
         }
     }
 }
+
+#close-icon {
+    text-align: right;
+    /* padding-right: 15px; */
+    margin-top: 2px;
+    display: flex;
+    align-self: end;
+}
+
+#close-icon,
+#hamburger-icon {
+    cursor: pointer;
+    line-height: 0;
+    background: none;
+    border: none;
+
+    svg {
+        fill: var(--secondary-color);
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+/* } */
 
 /* ---------------------------------- HOMEPAGE STYLING ---------------------------------- */
 /* ---------- MAIN SECTION STYLING ---------- */
@@ -247,7 +218,7 @@ header::after {
 
     @media (min-width: 768px) {
         display: grid;
-        grid-template-columns: 70% 30%;
+        grid-template-columns: 66% 33%;
     }
 }
 
@@ -343,8 +314,79 @@ header::after {
     }
 }
 
-/* ---------- STICKY SIDEBAR STYLING ---------- */
+/* ---------- (STICKY) SIDEBAR STYLING ---------- */
+.recent-articles {
 
+    .sidebar-articles {
+
+        img,
+        time,
+        span,
+        svg {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+
+            img,
+            time,
+            span,
+            svg {
+                display: block;
+            }
+
+            article {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: .5em;
+            }
+
+            img {
+                width: 25%;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+            }
+
+            .content-side {
+                .information {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: .5em;
+
+                    span,
+                    time {
+                        font-weight: 400;
+                        color: var(--dark-text);
+                    }
+                }
+
+                h3 {
+                    color: var(--secondary-color);
+                }
+            }
+
+
+        }
+    }
+}
+
+.archive {
+    width: 100%;
+
+    .single-archive {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        h3 {
+            font-weight: normal;
+        }
+    }
+}
 
 
 
