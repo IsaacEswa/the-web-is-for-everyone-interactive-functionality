@@ -313,7 +313,10 @@ header::after {
     .district-articles {
 
         @media (min-width: 768px) {
-            flex-direction: row;
+            /* flex-direction: row; */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
 
             h3 {
                 overflow: hidden;
