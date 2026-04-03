@@ -92,8 +92,9 @@ h3 {
 
 span,
 time {
-    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    /* font-size: clamp(1rem, 2.5vw, 1.125rem); */
     /* 16 → 18 */
+    font-size: 1rem;
     font-weight: bold;
 }
 
