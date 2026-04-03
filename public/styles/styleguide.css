@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 :root {
@@ -48,6 +48,26 @@ section {
 article,
 article img {
     border-radius: 20px;
+}
+
+/* Header logo */
+h1,
+h1 a,
+h1 a span {
+    font-family: Arial BC;
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    color: var(--secondary-color);
+    text-decoration: none;
+    line-height: 1;
+    margin-right: auto;
+
+    @media (min-width: 768px) {
+        margin: 0;
+    }
+
+    span {
+        color: var(--primary-color);
+    }
 }
 
 h2 {
