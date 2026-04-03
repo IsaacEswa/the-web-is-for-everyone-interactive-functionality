@@ -112,37 +112,6 @@ select {
 }
 
 /* article cards */
-.district-articles {
-    /* layout voor mobiel */
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-
-    /* card image */
-    .article-cover {
-        height: 200px;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    /* card content */
-    .article-card-content {
-        padding: 1em 1.5em;
-        gap: 0.7em;
-        display: flex;
-        flex-direction: column;
-
-        .article-intro {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            /* number of lines to show */
-            line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
-    }
-}
-
 .district-articles.algemeen .single-article {
     background-color: var(--light-background);
 

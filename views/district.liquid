@@ -57,22 +57,24 @@
     <section class="district-articles">
         <p><b>{{ stories | size }}</b> artikel(en) gevonden</p>
 
-        {% for story in stories %}
-        <a href="/{{ story.district }}/{{ story.slug }}" class="single-article-link">
-            <article class="single-article {{ story.district}}">
-                {% if story.cover %}
-                <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
-                {% else %}
-                <img class="article-cover fallback" src="/assets/Compact_Blurple_{{ district }}.png"
-                    alt="Geen afbeelding beschikbaar">
-                {% endif %} <div class="article-card-content">
-                    <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
-                    <h3 class="article-title">{{ story.title }}</h3>
-                    <p class="article-intro">{{ story.intro }}</p>
-                </div>
-            </article>
-        </a>
-        {% endfor %}
+        <div class="districtpage-articles-container">
+            {% for story in stories %}
+            <a href="/{{ story.district }}/{{ story.slug }}" class="single-article-link">
+                <article class="single-article {{ story.district}}">
+                    {% if story.cover %}
+                    <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
+                    {% else %}
+                    <img class="article-cover fallback" src="/assets/Compact_Blurple_{{ district }}.png"
+                        alt="Geen afbeelding beschikbaar">
+                    {% endif %} <div class="article-card-content">
+                        <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
+                        <h3 class="article-title">{{ story.title }}</h3>
+                        <p class="article-intro">{{ story.intro }}</p>
+                    </div>
+                </article>
+            </a>
+            {% endfor %}
+        </div>
     </section>
 
 </main>
