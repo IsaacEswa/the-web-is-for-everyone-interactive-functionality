@@ -444,6 +444,7 @@ header::after {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
+    padding-top: .5em;
 
     /* layout voor desktop */
     @media (min-width: 768px) {
@@ -456,17 +457,15 @@ header::after {
             grid-column: span 2;
         }
 
-        /* .single-article-link:first-child h3 {
-            color: red;
-        } */
+        /* .single-article-link:first-child .single-article.nieuw-west h3 {} */
     }
 
     /* card image */
-    .article-cover {
-        height: 200px;
+    /* .article-cover {
+        height: 300px;
         width: 100%;
         object-fit: cover;
-    }
+    } */
 
     /* card content */
     .article-card-content {

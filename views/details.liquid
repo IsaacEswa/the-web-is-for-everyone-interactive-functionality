@@ -6,7 +6,7 @@
 
         <a class="back-link" href="/{{ district }}">← Terug naar overzicht</a>
 
-        {% assign story = stories[0] %}
+        {% comment %} {% assign story = stories %} {% endcomment %}
 
         {% if story.cover %}
         <img class="single-article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">

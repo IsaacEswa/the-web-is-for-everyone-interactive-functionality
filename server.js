@@ -262,6 +262,7 @@ app.get('/:district/:slug', async function (request, response) {
     'sort': '-date',
 
     'filter[district]': district,
+    'filter[slug]': slug,
     // 'filter[story]': story,
 
     // Alleen de volgende velden tonen, zodat we niet onnodig veel data ophalen
@@ -273,7 +274,7 @@ app.get('/:district/:slug', async function (request, response) {
 
 
 
-  response.render('details.liquid', { stories: apiStoriesResponseJSON.data, district: district, slug: slug })
+  response.render('details.liquid', { story: apiStoriesResponseJSON.data[0], district: district, slug: slug })
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
