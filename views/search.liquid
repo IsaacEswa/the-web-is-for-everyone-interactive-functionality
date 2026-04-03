@@ -36,7 +36,7 @@
                         {% endif %}
 
                         <div class="article-card-content">
-                            <time class="article-date">
+                            <time class="article-date" datetime="{{ story.date }}">
                                 {{ story.date | date: "%d-%m-%Y" }}
                             </time>
                             <h3 class="article-title">{{ story.title }}</h3>

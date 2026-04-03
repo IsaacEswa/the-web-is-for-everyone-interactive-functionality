@@ -68,7 +68,8 @@
                     <img class="article-cover fallback" src="/assets/Compact_Blurple_{{ district }}.png"
                         alt="Geen afbeelding beschikbaar">
                     {% endif %} <div class="article-card-content">
-                        <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
+                        <time class="article-date" datetime="{{ story.date }}">{{ story.date | date: "%d-%m-%Y"
+                            }}</time>
                         <h3 class="article-title">{{ story.title }}</h3>
                         <p class="article-intro">{{ story.intro }}</p>
                     </div>

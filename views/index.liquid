@@ -13,7 +13,7 @@
                     <div class="featured-article-information">
                         <span>Laatste nieuws</span>
                         <div class="featured-article-date">
-                            <time datetime="">{{ latest.date }}</time>
+                            <time datetime="{{ latest.date }}">{{ latest.date | date: "%d-%m-%Y" }}</time>
                         </div>
                     </div>
                     <h3>{{ latest.title }}</h3>
@@ -47,7 +47,8 @@
                         {% endif %}
 
                         <div class="article-card-content">
-                            <time class="article-date">{{ story.date | date: "%d-%m-%Y" }}</time>
+                            <time class="article-date" datetime="{{ story.date }}">{{ story.date | date: "%d-%m-%Y"
+                                }}</time>
                             <h3 class="article-title">{{ story.title }}</h3>
                         </div>
                     </article>
