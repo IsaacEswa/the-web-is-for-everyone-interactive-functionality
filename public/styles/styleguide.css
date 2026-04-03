@@ -11,11 +11,11 @@
 }
 
 :root {
-    --primary-color: #FD4D00;
+    --primary-color: #bf410b;
     --primary-color-lighter: #FFE4D8;
     --secondary-color: #34356A;
 
-    --nieuw-west: #89A43B;
+    --nieuw-west: #4a5b18;
     --oost: #34356A;
     --zuidoost: #005D66;
     --algemeen: #F1F1F1;
@@ -51,7 +51,7 @@ article img {
 }
 
 /* Header logo */
-h1,
+/* h1,
 h1 a,
 h1 a span {
     font-family: Arial BC;
@@ -68,7 +68,7 @@ h1 a span {
     span {
         color: var(--primary-color);
     }
-}
+} */
 
 h2 {
     font-size: clamp(1.75rem, 3vw, 2rem);
