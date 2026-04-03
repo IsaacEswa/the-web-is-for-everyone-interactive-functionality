@@ -102,6 +102,147 @@ select {
     height: 3em;
 }
 
+/* article cards */
+.district-articles {
+    /* layout voor mobiel */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    /* card image */
+    .article-cover {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* card content */
+    .article-card-content {
+        padding: 1em 1.5em;
+        gap: 0.7em;
+        display: flex;
+        flex-direction: column;
+
+        .article-intro {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* number of lines to show */
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+.district-articles.algemeen .single-article {
+    background-color: var(--light-background);
+
+    time {
+        color: var(--primary-color);
+    }
+
+    h3 {
+        color: var(--secondary-color);
+    }
+}
+
+.district-articles.nieuw-west .single-article {
+    background-color: var(--nieuw-west);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: var(--light-text);
+    }
+}
+
+.single-article {
+    height: 100%;
+    padding: .5em;
+
+    gap: 0.5em;
+    display: flex;
+    flex-direction: column;
+
+    .article-cover {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .article-cover.fallback {
+        object-fit: contain;
+        background: var(--light-background);
+    }
+}
+
+/* single article styling per district */
+.single-article.algemeen {
+    background-color: var(--light-background);
+
+    time {
+        color: var(--primary-color);
+    }
+
+    h3 {
+        color: var(--secondary-color);
+    }
+
+    p {
+        color: var(--dark-text);
+    }
+}
+
+.single-article.nieuw-west {
+    background-color: var(--nieuw-west);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: var(--light-text);
+    }
+
+    p {
+        color: var(--light-text);
+    }
+}
+
+.single-article.zuidoost {
+    background-color: var(--zuidoost);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: var(--light-text);
+    }
+
+    p {
+        color: var(--light-text);
+    }
+}
+
+.single-article.oost {
+    background-color: var(--oost);
+
+    time {
+        color: var(--light-text);
+    }
+
+    h3 {
+        color: white;
+    }
+
+    p {
+        color: var(--light-text);
+    }
+}
+
 /* BUTTONS */
 .primary-button {
     padding: 0.5em 1.2em;
