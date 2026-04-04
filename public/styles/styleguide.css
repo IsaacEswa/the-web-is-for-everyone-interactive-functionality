@@ -36,13 +36,13 @@
         --dark-text: #F1F1F1;
         --light-text: #1E1E1E;
 
-        --primary-color: #bf410b;
-        --secondary-color: #34356A;
+        --primary-color: #df784b;
+        --secondary-color: #9a9cd0;
 
-        --nieuw-west: #4a5b18;
-        --oost: #34356A;
-        --zuidoost: #005D66;
-        --algemeen: #F1F1F1
+        --nieuw-west: #77864c;
+        --oost: #9a9cd0;
+        --zuidoost: #437f85;
+        --algemeen: #262626;
     }
 
 }
@@ -100,7 +100,7 @@ time {
 input,
 textarea {
     padding: 1em;
-    background-color: var(--light-background);
+    background-color: var(--algemeen);
     border: none;
     outline: none;
     border-radius: 10px;
@@ -112,7 +112,7 @@ select {
 
 /* article cards */
 .district-articles.algemeen .single-article {
-    background-color: var(--light-background);
+    background-color: var(--algemeen);
 
     time {
         color: var(--primary-color);
@@ -155,13 +155,13 @@ select {
 
     .article-cover.fallback {
         object-fit: contain;
-        background: var(--light-background);
+        background: var(--algemeen);
     }
 }
 
 /* single article styling per district */
 .single-article.algemeen {
-    background-color: var(--light-background);
+    background-color: var(--algemeen);
 
     time {
         color: var(--primary-color);
