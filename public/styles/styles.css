@@ -326,6 +326,17 @@ header::after {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .sticky-sidebar {
+        color: var(--dark-text);
+        fill: var(--dark-text);
+    }
+
+    .sticky-sidebar svg path {
+        stroke: var(--dark-text);
+    }
+}
+
 .recent-articles {
 
     .sidebar-articles {
