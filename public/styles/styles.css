@@ -524,6 +524,21 @@ header::after {
     object-fit: cover;
 }
 
+.article-content {
+
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    /* width: 60%; */
+    /* margin: auto; */
+
+    @media (min-width: 768px) {
+        width: 60%;
+        margin: auto;
+
+    }
+}
+
 .details-container {
     display: flex;
     flex-direction: column;
@@ -553,9 +568,12 @@ header::after {
     }
 
     .article-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
         * {
             color: var(--light-text);
-
         }
 
 
@@ -567,6 +585,11 @@ header::after {
             border-radius: 20px;
 
         }
+
+        /* @media (min-width: 768px) {
+            width: 80%;
+            margin: auto;
+        } */
     }
 
     .share-socials {
