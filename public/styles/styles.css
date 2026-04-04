@@ -228,6 +228,12 @@ header::after {
     }
 }
 
+@media (prefers-color-scheme: dark) {
+    .featured-article span {
+        color: var(--light-text);
+    }
+}
+
 .featured-article::after {
     content: "";
     position: absolute;

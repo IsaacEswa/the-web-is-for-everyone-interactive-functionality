@@ -41,7 +41,7 @@
 
         --nieuw-west: #8EA34B;
         --oost: #B3BCD0;
-        --zuidoost: #437f85;
+        --zuidoost: #699da2;
         --algemeen: #262626;
     }
 
@@ -176,6 +176,7 @@ select {
     }
 }
 
+
 .single-article.nieuw-west {
     background-color: var(--nieuw-west);
 
@@ -223,6 +224,13 @@ select {
         color: var(--light-text);
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .single-article.oost h3 {
+        color: var(--light-text);
+    }
+}
+
 
 /* BUTTONS */
 .primary-button {
