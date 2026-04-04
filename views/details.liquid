@@ -92,8 +92,8 @@
             {% if story.comments.size > 0 %}
             {% for comment in story.comments limit:3 %}
             <article class="single-comment">
-                <span>{{ comment.name }}</span>
-                <p>{{ comment.comment }}</p>
+                <span class="comment-name">{{ comment.name }}</span>
+                <p class="comment-text">{{ comment.comment }}</p>
             </article>
             {% endfor %}
             {% else %}
@@ -108,35 +108,32 @@
     <section class="featured-articles">
         <h2>Meer bekijken uit {{ district }}?</h2>
 
-        <div class="featured-articles-container">
 
-            <div class="district-articles {{ district }}">
-                {% assign district_stories = stories | where: "district", district %}
+        <div class="district-articles {{ district }}">
+            {% assign district_stories = stories | where: "district", district %}
 
-                {% for story in district_stories limit:4 %}
+            {% for story in district_stories limit:4 %}
 
-                <a href="/{{ story.district }}/{{ story.slug }}" class="single-article-link">
-                    <article class="single-article {{ district }}">
-                        {% if story.cover %}
-                        <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}"
-                            alt="">
-                        {% else %}
-                        <img class="article-cover fallback" src="/assets/Compact_Blurple_{{ district }}.png"
-                            alt="Geen afbeelding beschikbaar">
-                        {% endif %}
+            <a href="/{{ story.district }}/{{ story.slug }}" class="single-article-link">
+                <article class="single-article {{ district }}">
+                    {% if story.cover %}
+                    <img class="article-cover" src="https://fdnd-agency.directus.app/assets/{{ story.cover }}" alt="">
+                    {% else %}
+                    <img class="article-cover fallback" src="/assets/Compact_Blurple_{{ district }}.png"
+                        alt="Geen afbeelding beschikbaar">
+                    {% endif %}
 
-                        <div class="article-card-content">
-                            <time class="article-date" datetime="{{ story.date }}">{{ story.date | date: "%d-%m-%Y"
-                                }}</time>
-                            <h3 class="article-title">{{ story.title }}</h3>
-                        </div>
-                    </article>
-                </a>
+                    <div class="article-card-content">
+                        <time class="article-date" datetime="{{ story.date }}">{{ story.date | date: "%d-%m-%Y"
+                            }}</time>
+                        <h3 class="article-title">{{ story.title }}</h3>
+                    </div>
+                </article>
+            </a>
 
-                {% endfor %}
-            </div>
-
+            {% endfor %}
         </div>
+
     </section>
 
 </main>

@@ -675,7 +675,6 @@ header::after {
     }
 }
 
-/* ----- COMMENTS SECTION STYLING ----- */
 .article-comments {
 
     img {
@@ -709,32 +708,47 @@ header::after {
 
         }
     }
+}
 
-    .recent-comments {
-        .recent-comments-container {
-            display: flex;
-            flex-direction: column-reverse;
-            gap: 1em;
+.recent-comments {
+    .recent-comments-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1em;
 
-            .single-comment {
-                padding: 1em;
-                background-color: var(--primary-color-lighter);
-                /* border: 1px solid var(--primary-color); */
-            }
-        }
-
-        .empty-state {
-            text-align: center;
-            opacity: .6;
-            font-style: italic;
+        .single-comment {
+            padding: 1em;
+            background-color: var(--primary-color-lighter);
+            /* border: 1px solid var(--primary-color); */
         }
     }
 
-    @media (prefers-color-scheme: dark) {
-        .single-comment span {
-            color: var(--light-text);
-        }
+    .empty-state {
+        text-align: center;
+        opacity: .6;
+        font-style: italic;
+        color: var(--dark-text);
     }
+}
+
+@media (prefers-color-scheme: dark) {
+    .single-comment .comment-name {
+        color: var(--light-text);
+    }
+}
+
+/* ----- FEATURED ARTICLES SECTION STYLING ----- */
+.featured-articles {
+    @media (min-width: 768px) {
+
+        .district-articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+    }
+
 }
 
 /* footer */
