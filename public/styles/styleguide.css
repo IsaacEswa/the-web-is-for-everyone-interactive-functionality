@@ -95,6 +95,9 @@ time {
     /* 16 → 18 */
     font-size: 1rem;
     font-weight: bold;
+
+    color: var(--dark-text);
+
 }
 
 input,
@@ -111,6 +114,30 @@ select {
 }
 
 /* article cards */
+.district-articles {
+    /* layout voor mobiel */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding-top: .5em;
+
+    .article-card-content {
+        padding: 1em 1.5em;
+        gap: 0.7em;
+        display: flex;
+        flex-direction: column;
+
+        .article-intro {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            /* number of lines to show */
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
 .district-articles.algemeen .single-article {
     background-color: var(--algemeen);
 
@@ -175,7 +202,6 @@ select {
         color: var(--dark-text);
     }
 }
-
 
 .single-article.nieuw-west {
     background-color: var(--nieuw-west);

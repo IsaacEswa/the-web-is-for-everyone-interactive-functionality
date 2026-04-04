@@ -272,9 +272,22 @@ app.get('/:district/:slug', async function (request, response) {
   const apiStoriesResponse = await fetch('https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' + new URLSearchParams(params))
   const apiStoriesResponseJSON = await apiStoriesResponse.json()
 
+  // Featured artikelen (zelfde district)
+  const featuredParams = {
+    'sort': '-date',
+    'filter[district]': district,
+    'filter[slug][_neq]': slug,
+    'fields': 'id, cover, date, title, intro, status, district, slug, body, comments.*',
+  }
 
+  const featuredResponse = await fetch(
+    'https://fdnd-agency.directus.app/items/buurtcampuskrant_stories?' +
+    new URLSearchParams(featuredParams)
+  )
 
-  response.render('details.liquid', { story: apiStoriesResponseJSON.data[0], district: district, slug: slug })
+  const featuredJSON = await featuredResponse.json()
+
+  response.render('details.liquid', { story: apiStoriesResponseJSON.data[0], stories: featuredJSON.data, district: district, slug: slug })
 })
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
