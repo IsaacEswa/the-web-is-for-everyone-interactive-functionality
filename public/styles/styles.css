@@ -282,6 +282,28 @@ header::after {
     margin-top: 5em;
 
     .district-articles {
+        /* layout voor mobiel */
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+        padding-top: .5em;
+
+        .article-card-content {
+            padding: 1em 1.5em;
+            gap: 0.7em;
+            display: flex;
+            flex-direction: column;
+
+            .article-intro {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                /* number of lines to show */
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+        }
+
 
         @media (min-width: 768px) {
             /* flex-direction: row; */
@@ -300,6 +322,8 @@ header::after {
         }
     }
 }
+
+
 
 .homepage-district-top {
     display: flex;
