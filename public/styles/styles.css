@@ -1,6 +1,6 @@
 /* ---------- HEADER STYLING ---------- */
 header {
-    background: white;
+    background-color: var(--body-background);
     display: flex;
     justify-content: space-between;
     padding: 1.5em 15px;
@@ -30,45 +30,6 @@ header {
             color: var(--primary-color);
         }
     }
-
-    /* 
-    .header-logo {
-        display: flex;
-        line-height: 0;
-
-        img {
-            width: 75%;
-
-            @media (min-width: 768px) {
-                width: 50%;
-            }
-        }
-    } */
-
-    /* .desktop-navigation {
-        display: none;
-
-        @media (min-width: 768px) {
-            display: flex;
-            flex-direction: row;
-            gap: clamp(1em, 3vw, 3em);
-
-
-            li,
-            a {
-                width: 100%;
-                list-style: none;
-                text-decoration: none;
-                color: black;
-                margin-bottom: 0.5em;
-                word-break: keep-all;
-            }
-        }
-
-        a {
-            font-weight: 600;
-        }
-    } */
 
     .nav-search {
         padding-right: .5em;
@@ -123,7 +84,7 @@ header::after {
     height: 100vh;
     width: 75%;
     z-index: 999;
-    background: white;
+    background-color: var(--body-background);
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
     display: none;
     flex-direction: column;
@@ -138,7 +99,7 @@ header::after {
         width: 100%;
         list-style: none;
         text-decoration: none;
-        color: black;
+        color: var(--dark-text);
         margin-bottom: 0.5em;
     }
 
@@ -177,7 +138,7 @@ header::after {
             width: 100%;
             list-style: none;
             text-decoration: none;
-            color: black;
+            color: var(--dark-text);
             margin-bottom: 0.5em;
             /* font-weight: 400; */
             word-break: keep-all;
@@ -262,8 +223,8 @@ header::after {
     }
 
     * {
-        color: var(--light-text);
-        fill: var(--light-text);
+        color: #F1F1F1;
+        fill: #F1F1F1;
     }
 }
 
@@ -518,7 +479,7 @@ header::after {
 /* ----- DETAILS PAGE STYLING ----- */
 .back-link {
     text-decoration: none;
-    color: black;
+    color: var(--dark-text);
 }
 
 .single-article-cover {
@@ -571,7 +532,7 @@ header::after {
 
         svg {
             cursor: pointer;
-            fill: black;
+            fill: var(--dark-text);
         }
     }
 }
@@ -584,7 +545,7 @@ header::after {
     right: 0;
     top: 0;
     height: 2px;
-    background: black;
+    background: var(--dark-text);
     width: 100%;
 }
 
@@ -705,7 +666,7 @@ footer {
 
             a {
                 text-decoration: none;
-                color: black;
+                color: var(--dark-text);
             }
         }
     }

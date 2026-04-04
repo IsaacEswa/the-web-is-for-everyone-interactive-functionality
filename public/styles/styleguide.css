@@ -24,8 +24,26 @@
     --light-text: #F1F1F1;
 
     --light-background: #F1F1F1;
+    --body-background: #FFFFFF;
 
     --paddingsidesMobile: 0 15px;
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-background: #000000;
+        --dark-text: #F1F1F1;
+        --light-text: #1E1E1E;
+
+        --primary-color: #bf410b;
+        --secondary-color: #34356A;
+
+        --nieuw-west: #4a5b18;
+        --oost: #34356A;
+        --zuidoost: #005D66;
+        --algemeen: #F1F1F1
+    }
 
 }
 
@@ -33,6 +51,7 @@ body {
     line-height: 1.5;
     font-size: clamp(1rem, 1.2vw, 1.125rem);
     /* 16 → 18 */
+    background-color: var(--body-background);
 }
 
 main {
@@ -49,26 +68,6 @@ article,
 article img {
     border-radius: 20px;
 }
-
-/* Header logo */
-/* h1,
-h1 a,
-h1 a span {
-    font-family: Arial BC;
-    font-size: clamp(2rem, 3vw, 2.75rem);
-    color: var(--secondary-color);
-    text-decoration: none;
-    line-height: 1;
-    margin-right: auto;
-
-    @media (min-width: 768px) {
-        margin: 0;
-    }
-
-    span {
-        color: var(--primary-color);
-    }
-} */
 
 h1 {
     font-size: clamp(2rem, 3vw, 2.75rem);
