@@ -59,24 +59,30 @@
     </section>
 
     <section class="article-comments">
-        <h2>Laat je bericht achter</h2>
 
-        <form action="/{{ district }}/{{ slug }}/comment/" method="post">
-            <input type="hidden" name="story" value="{{ story.id }}">
+        <div class="left-side">
+            <h2>Laat je bericht achter</h2>
 
-            <label class="comments-field" for="name">
-                <span>Jouw naam *</span>
-                <input name="name" id="name" type="text" placeholder="Voornaam + achternaam " required>
-            </label>
+            <form action="/{{ district }}/{{ slug }}/comment/" method="post">
+                <input type="hidden" name="story" value="{{ story.id }}">
 
-            <label class="comments-field" for="comment">
-                <span>Jouw bericht *</span>
-                <textarea name="comment" id="comment" rows="3" placeholder="Ik had een opmerking over..."
-                    required></textarea>
-            </label>
+                <label class="comments-field" for="name">
+                    <span>Jouw naam *</span>
+                    <input name="name" id="name" type="text" placeholder="Voornaam + achternaam " required>
+                </label>
 
-            <button class="primary-button" type="submit">Verzenden</button>
-        </form>
+                <label class="comments-field" for="comment">
+                    <span>Jouw bericht *</span>
+                    <textarea name="comment" id="comment" rows="3" placeholder="Ik had een opmerking over..."
+                        required></textarea>
+                </label>
+
+                <button class="primary-button" type="submit">Verzenden</button>
+            </form>
+        </div>
+        <div class="right-side">
+            <img src="/assets/buurtcampus_0012_pop-die-formulier-invult.png" alt="Formulier invullen">
+        </div>
     </section>
 
     <section class="recent-comments">
