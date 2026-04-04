@@ -321,8 +321,12 @@ header::after {
     @media (min-width: 768px) {
         display: block;
         position: sticky;
-        top: 2rem;
+        top: .5rem;
         align-self: flex-start;
+        padding-top: 1em;
+        border-radius: 20px;
+        background-color: var(--algemeen);
+
     }
 }
 
