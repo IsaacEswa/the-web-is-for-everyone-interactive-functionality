@@ -109,6 +109,15 @@ textarea {
     border-radius: 10px;
 }
 
+@media (prefers-color-scheme: dark) {
+
+    input,
+    textarea {
+        border: 1px solid var(--dark-text);
+        color: var(--dark-text);
+    }
+}
+
 select {
     height: 3em;
 }

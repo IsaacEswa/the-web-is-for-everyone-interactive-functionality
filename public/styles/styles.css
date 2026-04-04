@@ -119,6 +119,16 @@ header::after {
     display: flex;
 }
 
+@media (prefers-color-scheme: dark) {
+    header {
+        color: var(--dark-text);
+    }
+
+    header svg path {
+        stroke: var(--dark-text);
+    }
+}
+
 /* .menu {
     display: flex;
     flex-direction: row;
@@ -475,9 +485,14 @@ header::after {
 }
 
 /* ----- SEARCH PAGE STYLING ----- */
+.search-articles {
+    margin-top: 3em;
+}
+
 .search-result,
 .search-count {
     text-align: center;
+    color: var(--dark-text);
 }
 
 /* ----- DETAILS PAGE STYLING ----- */
@@ -522,7 +537,10 @@ header::after {
     }
 
     .article-body {
-        color: var(--dark-text);
+        * {
+            color: var(--light-text);
+
+        }
 
 
         img {
@@ -568,6 +586,36 @@ header::after {
 .details-container.nieuw-west,
 .details-container.zuidoost,
 .details-container.oost {
+
+
+
+
+    .article-information time,
+    .article-information span {
+
+        color: var(--light-text);
+        fill: var(--light-text);
+    }
+
+    .article-title {
+        color: var(--light-text);
+
+    }
+
+    .article-intro {
+        font-weight: bold;
+        color: var(--light-text);
+
+    }
+
+    .article-body {
+        color: var(--light-text);
+    }
+
+
+
+
+
     color: var(--light-text);
 
     .back-link {
@@ -623,6 +671,12 @@ header::after {
         text-align: center;
         opacity: .6;
         font-style: italic;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .single-comment span {
+        color: var(--light-text);
     }
 }
 

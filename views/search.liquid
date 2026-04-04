@@ -14,13 +14,14 @@
         {% assign district_stories = stories | where: "district", district %}
 
         {% if district_stories.size > 0 %}
-        <section class="home-articles">
+        <section class="search-articles">
 
 
-            <div class="home-district-top">
+            {% comment %} <div class="home-district-top"> {% endcomment %}
                 <h2>{{ district | capitalize }}</h2>
-                <a href="/{{ district }}">Alles bekijken →</a>
-            </div>
+                {% comment %} <a href="/{{ district }}">Alles bekijken →</a> {% endcomment %}
+                {% comment %}
+            </div> {% endcomment %}
 
             <div class="district-articles {{ district }}">
                 {% for story in district_stories %}
