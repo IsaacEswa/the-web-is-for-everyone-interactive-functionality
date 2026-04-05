@@ -95,6 +95,9 @@ Dit wordt gerealiseerd met `if` en `else` tags [Voorbeeld](https://github.com/Is
 
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/c74a733f-e851-4f91-b2a4-264074cc14a5" />
 
+## Progressive Enhancement
+Voor de [progressive enhancement](https://github.com/IsaacEswa/the-web-is-for-everyone-interactive-functionality/blob/22b102ae706f01da18b5dfd2ed5b41b6fe1e43f2/public/styles/styleguide.css#L33-L48) heb ik `@media (prefers-color-scheme: dark)` gebruikt. De website is nu mogelijk in light en dark mode.
+
 
 ## Installatie
 <!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
